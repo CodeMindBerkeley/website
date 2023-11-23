@@ -16,9 +16,11 @@
   });
 </script>
 
-<div id="blob"></div>
+<main>
+  <div id="blob"></div>
+</main>
 
-<style>
+<style lang="scss">
   #blob {
     background-color: white;
     height: 240px;

@@ -1,5 +1,7 @@
 <script lang="ts">
   import Blob from "./Blob.svelte";
+  import Blur from "./Blur.svelte";
+  import Background from "./Background.svelte";
   import Footer from "./Footer.svelte";
   import MainContainer from "./MainContainer.svelte";
   import MissionContainer from "./MissionContainer.svelte";
@@ -24,26 +26,27 @@
     // GSAP animation for MissionContainer
     gsap.from("#mission-container", {
       scrollTrigger: {
-        trigger: "#main-container",
-        start: "bottom end+=13%",
-        end: "bottom center+=40%",
-        toggleActions: "play none none none",
-        markers: true,
+        trigger: "#h2",
+        start: "bottom 30%",
       },
+      y: -20,
+      duration: 3,
       opacity: 0,
-      duration: 1,
-      y: 20, // Adjust as necessary for the vertical movement effect
     });
   });
 </script>
 
 <main>
-  <div id="background"></div>
+  <Background />
   <Blob />
-  <div id="blur"></div>
+  <Blur />
 
   <MainContainer />
   <MissionContainer />
 
   <Footer />
 </main>
+
+<style>
+
+</style>

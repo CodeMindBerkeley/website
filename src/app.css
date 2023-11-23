@@ -114,15 +114,6 @@ text-shadow: rgb(255, 255, 255) 1px 0 20px, rgb(255, 255, 255) 1px 0 40px, rgb(2
 } */
 
 
-#blur {
-position: fixed;
-left: 0;
-top: 0;
-height: 100%;
-width: 100%;
-z-index: 0;
-backdrop-filter: blur(3vmax);
-}
 
 #modal-blur {
 opacity: 0;
@@ -245,26 +236,6 @@ font-weight: bold;
 backdrop-filter: blur(0.1vmax);
 }
 
-#mission-container {
-z-index: 4000;
-max-width: 50%;
-
-transform: translateX(50%);
-margin-top: 20%;
-margin-bottom: 20%;
-}
-#mission-title {
-font-weight: bold;
-font-size: 48px;
-z-index: 4000;
-text-align: center;
-background: linear-gradient(to right, #6873d4, #ffffff 80%);
--webkit-text-fill-color: transparent; 
--webkit-background-clip: text; 
-text-shadow: none;
-
-}
-
 #description-container {
 z-index: 4000;
 width: 50%;
@@ -276,19 +247,4 @@ font-weight: bold;
 font-size: 48px;
 z-index: 4000;
 text-align: center;
-}
-
-#footer {
-position: absolute;
-text-align: center;
-height: auto;
-font-size: 1rem;
-z-index: 4000;
-margin-bottom: 5%;
-width: 100%;
-border-radius: 5vh;
-color: white;
-}
-#footer > span {
-margin: 1rem;
 }
