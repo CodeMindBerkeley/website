@@ -1,47 +1,49 @@
 <script lang="ts">
-  import svelteLogo from './assets/svelte.svg'
-  import viteLogo from '/vite.svg'
-  import Counter from './lib/Counter.svelte'
+  import Blob from "./Blob.svelte";
+  import Footer from "./Footer.svelte";
+  import MainContainer from "./MainContainer.svelte";
+  import MissionContainer from "./MissionContainer.svelte";
+  import { onMount } from "svelte";
+  // @ts-ignore
+  import { gsap } from "gsap";
+  // @ts-ignore
+  import ScrollTrigger from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  onMount(() => {
+    // GSAP animation for MainContainer
+    let mainContainerTimeline = gsap.timeline();
+
+    mainContainerTimeline.from("#main-container", {
+      opacity: 0,
+      duration: 1,
+      y: -20,
+    });
+
+    // GSAP animation for MissionContainer
+    gsap.from("#mission-container", {
+      scrollTrigger: {
+        trigger: "#main-container",
+        start: "bottom end+=13%",
+        end: "bottom center+=40%",
+        toggleActions: "play none none none",
+        markers: true,
+      },
+      opacity: 0,
+      duration: 1,
+      y: 20, // Adjust as necessary for the vertical movement effect
+    });
+  });
 </script>
 
 <main>
-  <div>
-    <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-      <img src={viteLogo} class="logo" alt="Vite Logo" />
-    </a>
-    <a href="https://svelte.dev" target="_blank" rel="noreferrer">
-      <img src={svelteLogo} class="logo svelte" alt="Svelte Logo" />
-    </a>
-  </div>
-  <h1>Vite + Svelte</h1>
+  <div id="background"></div>
+  <Blob />
+  <div id="blur"></div>
 
-  <div class="card">
-    <Counter />
-  </div>
+  <MainContainer />
+  <MissionContainer />
 
-  <p>
-    Check out <a href="https://github.com/sveltejs/kit#readme" target="_blank" rel="noreferrer">SvelteKit</a>, the official Svelte app framework powered by Vite!
-  </p>
-
-  <p class="read-the-docs">
-    Click on the Vite and Svelte logos to learn more
-  </p>
+  <Footer />
 </main>
-
-<style>
-  .logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-    transition: filter 300ms;
-  }
-  .logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
-  }
-  .logo.svelte:hover {
-    filter: drop-shadow(0 0 2em #ff3e00aa);
-  }
-  .read-the-docs {
-    color: #888;
-  }
-</style>
