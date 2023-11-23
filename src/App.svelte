@@ -31,7 +31,7 @@
 </script>
 
 <main>
-  <div on:wheel={handleScroll}>
+  <div id="scrollHandler" on:wheel={handleScroll}>
     <Background />
     <Blob />
     <Blur />
@@ -43,4 +43,16 @@
 </main>
 
 <style>
+  #scrollHandler {
+    margin: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0; /* Align the top edge of the element with the viewport */
+    left: 0; /* Align the left edge of the element with the viewport */
+    right: 0; /* Stretch the element to the right edge of the viewport */
+    bottom: 0; /* Stretch the element to the bottom edge of the viewport */
+    display: flex; /* Enable flexbox layout */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+  }
 </style>

@@ -26,16 +26,16 @@
 <style>
   #mission-container {
     z-index: 4000;
-    max-width: 50%;
-
-    transform: translateX(50%);
-    margin-top: 20%;
-    margin-bottom: 20%;
+    width: 100%;
+    display: flex;
+    align-items: center;
   }
   #mission-title {
     font-weight: bold;
     font-size: 48px;
     z-index: 4000;
+    padding-left: 15%;
+    padding-right: 15%;
     text-align: center;
     background: linear-gradient(to right, #6873d4, #ffffff 80%);
     -webkit-text-fill-color: transparent;
