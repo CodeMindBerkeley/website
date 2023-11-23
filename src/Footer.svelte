@@ -29,6 +29,8 @@
     font-size: 1rem;
     z-index: 4000;
     padding-bottom: 1%;
+    position: fixed;
+    bottom: 0;
     width: 100%;
     border-radius: 5vh;
     color: white;

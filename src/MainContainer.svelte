@@ -1,5 +1,18 @@
 <script lang="ts">
-  //export let animateIn;
+  import { onMount } from "svelte";
+  // @ts-ignore
+  import { gsap } from "gsap";
+
+  onMount(() => {
+    // GSAP animation for MainContainer
+    let mainContainerTimeline = gsap.timeline();
+
+    mainContainerTimeline.from("#main-container", {
+      opacity: 0,
+      duration: 1,
+      y: -20,
+    });
+  });
 </script>
 
 <main>

@@ -1,5 +1,18 @@
 <script lang="ts">
-  //export let animateIn;
+  import { onMount } from "svelte";
+  // @ts-ignore
+  import { gsap } from "gsap";
+
+  onMount(() => {
+    // GSAP animation for MainContainer
+    let mainContainerTimeline = gsap.timeline();
+
+    mainContainerTimeline.from("#mission-container", {
+      opacity: 0,
+      duration: 1,
+      y: -20,
+    });
+  });
 </script>
 
 <main>
@@ -25,8 +38,8 @@
     z-index: 4000;
     text-align: center;
     background: linear-gradient(to right, #6873d4, #ffffff 80%);
-    -webkit-text-fill-color: transparent; 
-    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
     text-shadow: none;
   }
 </style>

@@ -5,48 +5,42 @@
   import Footer from "./Footer.svelte";
   import MainContainer from "./MainContainer.svelte";
   import MissionContainer from "./MissionContainer.svelte";
-  import { onMount } from "svelte";
-  // @ts-ignore
-  import { gsap } from "gsap";
-  // @ts-ignore
-  import ScrollTrigger from "gsap/ScrollTrigger";
 
-  gsap.registerPlugin(ScrollTrigger);
+  let comp = [
+    { id: "main-container", component: MainContainer },
+    { id: "mission-container", component: MissionContainer },
+  ];
 
-  onMount(() => {
-    // GSAP animation for MainContainer
-    let mainContainerTimeline = gsap.timeline();
+  let currentIndex = 0;
+  let threshold = 20; // Set a threshold for scroll sensitivity
+  let accumulatedDeltaY = 0;
 
-    mainContainerTimeline.from("#main-container", {
-      opacity: 0,
-      duration: 1,
-      y: -20,
-    });
+  function handleScroll(event: WheelEvent) {
+    accumulatedDeltaY += event.deltaY;
 
-    // GSAP animation for MissionContainer
-    gsap.from("#mission-container", {
-      scrollTrigger: {
-        trigger: "#h2",
-        start: "bottom 30%",
-      },
-      y: -20,
-      duration: 3,
-      opacity: 0,
-    });
-  });
+    if (accumulatedDeltaY > threshold) {
+      // Scrolling down
+      currentIndex = Math.min(currentIndex + 1, comp.length - 1);
+      accumulatedDeltaY = 0;
+    } else if (accumulatedDeltaY < -threshold) {
+      // Scrolling up
+      currentIndex = Math.max(currentIndex - 1, 0);
+      accumulatedDeltaY = 0;
+    }
+  }
 </script>
 
 <main>
-  <Background />
-  <Blob />
-  <Blur />
+  <div on:wheel={handleScroll}>
+    <Background />
+    <Blob />
+    <Blur />
 
-  <MainContainer />
-  <MissionContainer />
+    <svelte:component this={comp[currentIndex].component} />
+  </div>
 
   <Footer />
 </main>
 
 <style>
-
 </style>
