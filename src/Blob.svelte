@@ -6,10 +6,25 @@
 
     // Blob animation
     window.onpointermove = (event: PointerEvent) => {
+      let size = "240px";
       const { clientX, clientY } = event;
       // @ts-ignore
+      if (event.target && event.target.id) {
+        // @ts-ignore
+        if (event.target.id == "interactable") {
+          size = "0px";
+        } else {
+          size = "240px";
+        }
+      }
+      // @ts-ignore
       blob.animate(
-        { left: `${clientX}px`, top: `${clientY + window.scrollY}px` },
+        {
+          left: `${clientX}px`,
+          top: `${clientY + window.scrollY}px`,
+          height: size,
+          width: size,
+        },
         { duration: 2000, fill: "forwards" }
       );
     };

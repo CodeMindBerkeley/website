@@ -21,8 +21,31 @@
     <div id="h2">
       Interdisciplinary CS research with UC Berkeley Professors and Students
     </div>
+    <button id="interactable" class="button button2"
+      >Sign up For the Webinar</button
+    >
   </section>
 </main>
 
 <style>
+  .button {
+    background-color: rgb(56, 54, 54);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+  }
+
+  .button:hover {
+    background-color: white;
+    background: linear-gradient(to right, aquamarine, mediumpurple);
+    color: rgb(56, 54, 54);
+  }
 </style>

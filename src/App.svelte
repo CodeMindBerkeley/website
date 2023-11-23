@@ -6,10 +6,7 @@
   import MainContainer from "./MainContainer.svelte";
   import MissionContainer from "./MissionContainer.svelte";
 
-  let comp = [
-    { id: "main-container", component: MainContainer },
-    { id: "mission-container", component: MissionContainer },
-  ];
+  let comp = [MainContainer, MissionContainer];
 
   let currentIndex = 0;
   let threshold = 20; // Set a threshold for scroll sensitivity
@@ -36,10 +33,12 @@
     <Blob />
     <Blur />
 
-    <svelte:component this={comp[currentIndex].component} />
+    <svelte:component this={comp[currentIndex]} />
   </div>
 
-  <Footer />
+  {#if currentIndex == comp.length - 1}
+    <Footer />
+  {/if}
 </main>
 
 <style>
