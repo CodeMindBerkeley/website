@@ -6,12 +6,12 @@
 
     // Blob animation
     window.onpointermove = (event: PointerEvent) => {
-      let size = "240px";
+      let size;
       const { clientX, clientY } = event;
       // @ts-ignore
       if (event.target && event.target.id) {
         // @ts-ignore
-        if (event.target.id == "interactable") {
+        if (event.target.id.includes("interactable")) {
           size = "0px";
         } else {
           size = "240px";

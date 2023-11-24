@@ -5,15 +5,26 @@
   import Footer from "./Footer.svelte";
   import MainContainer from "./MainContainer.svelte";
   import MissionContainer from "./MissionContainer.svelte";
+  import Description from "./Description.svelte";
 
-  let comp = [MainContainer, MissionContainer];
+  let comp = [MainContainer, MissionContainer, Description];
 
   let currentIndex = 0;
-  let threshold = 20; // Set a threshold for scroll sensitivity
+  let threshold = 4; // Set a threshold for scroll sensitivity
   let accumulatedDeltaY = 0;
 
+  let lastInvocation = 0;
+  const debounceInterval = 50;
+
   function handleScroll(event: WheelEvent) {
-    accumulatedDeltaY += event.deltaY;
+    const now = Date.now();
+    if (now - lastInvocation < debounceInterval) {
+      return; // Skip this invocation because it's too soon
+    }
+    lastInvocation = now;
+
+    let change = Math.sign(event.deltaY);
+    accumulatedDeltaY += change;
 
     if (accumulatedDeltaY > threshold) {
       // Scrolling down
