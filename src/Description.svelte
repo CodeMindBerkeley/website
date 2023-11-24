@@ -5,7 +5,7 @@
   import Timeline from "./Timeline.svelte";
 
   import { faHandshake } from "@fortawesome/free-solid-svg-icons";
-  import { faClock } from "@fortawesome/free-solid-svg-icons";
+  import { faRightToBracket } from "@fortawesome/free-solid-svg-icons";
   import { faPenToSquare } from "@fortawesome/free-solid-svg-icons";
   import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
   import { faPersonChalkboard } from "@fortawesome/free-solid-svg-icons";
@@ -21,15 +21,15 @@
     {
       index: 1,
       step: "12/12",
-      image: faClock,
-      text: "Enrollment Ends",
+      image: faRightToBracket,
+      text: "Onboarding",
       disc: "Eget nullam non nisi est. Tortor at auctor urna nunc id cursus metus. Purus semper eget duis at tellus at. Eget nullam non nisi est. Tortor at auctor urna nunc id cursus",
     },
     {
       index: 2,
       step: "12/12",
       image: faPenToSquare,
-      text: "Projects Begin",
+      text: "Project Assignment",
       disc: "Lectus proin nibh nisl condimentum id venenatis a. Nisi lacus sed viverra tellus in hac. Lacus vestibulum sed arcu non. Amet porttitor eget dolor morbi non arcu risus",
     },
     {
@@ -43,7 +43,7 @@
       index: 4,
       step: "12/12",
       image: faPersonChalkboard,
-      text: "Projects End",
+      text: "Projects Symposium",
       disc: "Adipiscing enim eu turpis egestas pretium aenean pharetra magna. Netus et malesuada fames ac turpis. Netus et malesuada fames ac turpis. Netus et malesuada fames ac turpis.",
     },
   ];

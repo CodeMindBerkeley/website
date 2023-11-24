@@ -6,8 +6,13 @@
   import MainContainer from "./MainContainer.svelte";
   import MissionContainer from "./MissionContainer.svelte";
   import Description from "./Description.svelte";
+  import About from "./About.svelte";
+  import Modal from "./Modal.svelte";
 
-  let comp = [MainContainer, MissionContainer, Description];
+  let comp = [MainContainer, MissionContainer, Description, About];
+
+  let showModal = false;
+  let modalText = "";
 
   let currentIndex = 0;
   let threshold = 4; // Set a threshold for scroll sensitivity
@@ -44,7 +49,21 @@
     <Blob />
     <Blur />
 
-    <svelte:component this={comp[currentIndex]} />
+    <svelte:component
+      this={comp[currentIndex]}
+      on:displayModal={(e) => {
+        showModal = true;
+        modalText = e.detail.modalText;
+      }}
+    />
+    {#if showModal}
+      <Modal
+        {modalText}
+        on:click={() => {
+          showModal = false;
+        }}
+      />
+    {/if}
   </div>
 
   {#if currentIndex == comp.length - 1}
@@ -57,7 +76,7 @@
     margin: 0;
     overflow: hidden;
     position: fixed;
-    top: 0; /* Align the top edge of the element with the viewport */
+    top: 0;
     left: 0; /* Align the left edge of the element with the viewport */
     right: 0; /* Stretch the element to the right edge of the viewport */
     bottom: 0; /* Stretch the element to the bottom edge of the viewport */
