@@ -16,7 +16,7 @@
       step: "12/12",
       image: faHandshake,
       text: "Informational Webinar",
-      disc: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Purus semper eget duis at. Nec dui nunc mattis",
+      disc: "All propsective applicants begin by attending a 1 hour webinar through Zoom where you'll meet the team and learn more about the services we offer. During this meeting, you will receive a link to the payment link and ",
     },
     {
       index: 1,

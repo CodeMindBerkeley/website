@@ -12,10 +12,10 @@
   let containerHeight: number;
 
   let accordionItems = [
-    { title: "Question 1", content: "Lorem ipsum dolor sit amet..." },
-    { title: "Question 2", content: "Consectetur adipiscing elit..." },
+    { title: "How much does the program cost?", content: "The cost will be revealed once attending the first informational webinar." },
+    { title: "How do I pay?", content: "You will receive a link to the payment also during the informational webinar." },
     { title: "Question 3", content: "Consectetur adipiscing elit..." },
-    { title: "Question 4", content: "Consectetur adipiscing elit..." },
+    { title: "Is this program officially associated with UC Berkeley?", content: "No, Code Mind Berkeley is simply a service provided by UC Berkeley Students and Professors but we are not officially associated with the university." },
   ];
 
   function toggleItem(index: number | null) {
@@ -24,12 +24,11 @@
     mainContainerTimeline.set("#allEncapsulating", {
         transformStyle: "preserve-3d",
         transformPerspective: 1000,
-        rotationY: 180,
     })
     // First animation: scale down
     mainContainerTimeline.to("#allEncapsulating", {
       duration: 0.5,
-      rotationY: 0,
+      scaleX: -1,
       opacity: 0,
       onComplete: () => {
         activeIndex = activeIndex === index ? null : index;
@@ -37,8 +36,8 @@
         // Second animation: scale back up, after updating activeIndex
         gsap.to("#allEncapsulating", {
           duration: 0.5,
-          rotationY: 0, // Scale back to original size
           opacity: 1,
+          scaleX: 1,
         });
       },
     });
@@ -47,7 +46,7 @@
   onMount(() => {
     // GSAP animation for MainContainer
     let mainContainerTimeline = gsap.timeline();
-    containerHeight = faqContainer.clientHeight;
+    containerHeight = faqContainer.clientHeight - 246; // 246 to remove title shifting
     mainContainerTimeline.from("#faq-container", {
       opacity: 0,
       duration: 1,
@@ -99,14 +98,21 @@
 </main>
 
 <style>
+  #faq-container {
+    overflow: hidden !important;
+  }
   .accordion-item {
     border: 1px solid #ccc;
     margin: 10px;
     padding: 30px;
     cursor: pointer;
     overflow: hidden;
+    transition: all 200ms ease;
 
-
+    &:hover {
+      border-radius: 50px;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
   }
 
   .title {
@@ -125,9 +131,5 @@
     flex-direction: row;
     justify-content: space-between; /* This will push the title to the left and the expand icon to the right */
     align-items: center; /* This will vertically align the title and expand icon */
-  }
-
-  .title {
-    font-weight: bold;
   }
 </style>
