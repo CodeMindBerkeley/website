@@ -47,7 +47,7 @@
     translate: -50% -50%;
     background: linear-gradient(to right, aquamarine, mediumpurple);
     animation: rotate 20s infinite;
-    opacity: 0.2;
+    opacity: 0.25;
     transition:
       opacity 500ms,
       width 500ms,

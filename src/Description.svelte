@@ -134,6 +134,7 @@
   #stepDisc {
     font-size: 36px;
     width: 68%;
+    height: 30vh;
     text-align: left;
     margin-top: 2%;
     margin-left: auto;

@@ -99,7 +99,7 @@
   //@ts-ignore
   function resetTilt(event) {
     const card = event.currentTarget;
-    card.style.transition = "transform 300ms ease";
+    card.style.transition = "all 100ms ease";
     card.style.transform = "rotateX(0deg) rotateY(0deg)";
   }
 
@@ -215,16 +215,11 @@
   #gradientBorder:hover {
     padding: 6px;
     background: linear-gradient(to right, aquamarine, mediumpurple);
-    animation: bgRotate 5s linear infinite;
+    transition: all 100ms ease;
   }
 
-  @keyframes bgRotate {
-    0% {
-      background-position: 0% 0%;
-    }
-    100% {
-      background-position: 100% 100%;
-    }
+  #gradientBorder:not(:hover) {
+    transition: all 100ms ease;
   }
 
   .card > h6 {
