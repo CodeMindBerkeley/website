@@ -8,7 +8,7 @@
   import Description from "./Description.svelte";
   import About from "./About.svelte";
   import Modal from "./Modal.svelte";
-  import FAQ from "./Faq.svelte";
+  import FAQ from "./FAQ.svelte";
 
   let comp = [MainContainer, MissionContainer, Description, About, FAQ];
 
