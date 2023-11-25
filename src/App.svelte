@@ -8,8 +8,9 @@
   import Description from "./Description.svelte";
   import About from "./About.svelte";
   import Modal from "./Modal.svelte";
+  import Faq from "./Faq.svelte";
 
-  let comp = [MainContainer, MissionContainer, Description, About];
+  let comp = [MainContainer, MissionContainer, Description, About, Faq];
 
   let showModal = false;
   let modalText = "";

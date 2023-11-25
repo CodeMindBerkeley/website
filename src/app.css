@@ -165,3 +165,10 @@ a:focus::after {
   transform-origin: left;
 }
 /* end link animation */
+
+.arrow-icon {
+  color: white;
+}
+.arrow-icon:hover {
+  color: #9a9ce9;
+}
