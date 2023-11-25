@@ -22,15 +22,27 @@
         © Code Mind Berkeley 2023
       </a>
     </span>
+
     <span>
       <a
-        href="Privacy Policy/v1.pdf"
+        href="https://docs.google.com/forms/u/5/d/1INqjanGTz29xChcQt6mAYmcYK9gqiwaNrhbVbe-3jIk"
+        aria-label="Work with us"
+        target="_blank"
+      >
+        Careers
+      </a>
+    </span>
+
+    <span>
+      <a
+        href="https://codemindberkeley.com/Privacy Policy/v1.pdf"
         aria-label="Code Mind Berkeley's Privacy Policy"
         target="_blank"
       >
         Privacy Policy
       </a>
     </span>
+
   </section>
 </main>
 

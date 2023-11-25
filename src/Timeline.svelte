@@ -4,37 +4,43 @@
   import { faHandshake } from "@fortawesome/free-solid-svg-icons";
   export let steps = [{ index: 0, step: "", image: faHandshake, text: "" }];
   export let currentStepIndex = 0;
+  export let currentProgress: number = 0;
 </script>
 
-<div class="timeline-toprow">
-  {#each steps as step}
-    <div class="timeline-steps">{step.step}</div>
-  {/each}
-</div>
-<div class="timeline-line"></div>
-<div class="timeline-midrow">
-  {#each steps as step}
-    <div
-      id="interactable {step.index}"
-      class="timeline-circle {currentStepIndex === step.index ? 'active' : ''}"
-    >
-      <Fa
+<main>
+  <div class="headings">Timeline</div>
+  <div class="timeline-toprow">
+    {#each steps as step}
+      <div class="timeline-steps">{step.step}</div>
+    {/each}
+  </div>
+  <div class="timeline-line"></div>
+  <div class="timeline-progress" style="width: {currentProgress}%"></div>
+  <div class="timeline-midrow">
+    {#each steps as step}
+      <div
         id="interactable {step.index}"
-        color={currentStepIndex === step.index ? "#9a9ce9" : "white"}
-        size="1x"
-        translateY={0.5}
-        icon={step.image}
-      />
-    </div>
-  {/each}
-</div>
-<div class="timeline-bottomrow">
-  {#each steps as step}
-    <div class="timeline-text">
-      <div class="timeline-subhead">{step.text}</div>
-    </div>
-  {/each}
-</div>
+        class="timeline-circle {currentStepIndex === step.index ? 'active' : ''}"
+      >
+        <Fa
+          id="interactable {step.index}"
+          color={currentStepIndex === step.index ? "#9a9ce9" : "white"}
+          size="1x"
+          translateY={0.5}
+          icon={step.image}
+        />
+      </div>
+    {/each}
+  </div>
+  <div class="timeline-bottomrow">
+    {#each steps as step}
+      <div class="timeline-text">
+        <div class="timeline-subhead">{step.text}</div>
+      </div>
+    {/each}
+  </div>
+
+</main>
 
 <style lang="scss">
   /* PAGE 1 TIMELINE - HORIZONTAL (DESKTOP/TABLET) */
@@ -79,7 +85,18 @@
     // margin-left: $spacingTwo;
     // margin-right: $spacingTwo;
   }
-
+  .timeline-progress{
+    z-index: 1;
+    display: block;
+    position: absolute;
+    width: 56.5%;
+    left: 21%;
+    height: 5px;
+    background-color: #ffffff;
+    margin-top: 15px;
+    // margin-left: $spacingTwo;
+    // margin-right: $spacingTwo;
+  }
   .timeline-circle {
     background-color: #9a9ce9;
     border: 1px solid #9a9ce9;
@@ -87,7 +104,11 @@
     width: 35px;
     height: 35px;
     margin: auto;
-    z-index: 1;
+    z-index: 2;
+  }
+
+  .timeline-circle:hover {
+    cursor: pointer;
   }
 
   .active {

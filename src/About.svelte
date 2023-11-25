@@ -18,63 +18,56 @@
       id: "0",
       title: "Prof. Mohamad Hallal",
       status: "professor",
-      image: "MH.jpeg",
+      image: "MH.jpg",
       disc: "Maecenas pharetra convallis posuere morbi leo urna. Pharetra massa massa ultricies mi. Mattis enim ut tellus elementum sagittis vitae. Est lorem ipsum dolor sit amet consectetur. Volutpat maecenas volutpat blandit aliquam etiam. Malesuada fames ac turpis egestas integer eget aliquet. Amet venenatis urna cursus eget nunc scelerisque viverra. Sit amet risus nullam eget felis eget nunc lobortis.",
     },
     {
       id: "1",
-      title: "Prof. Mohamad Hallal",
-      status: "professor",
-      image: "MH.jpeg",
+      title: "Genesis Nguyen",
+      status: "",
+      image: "GN.jpg",
       disc: "Maecenas pharetra convallis posuere morbi leo urna. Pharetra massa massa ultricies mi. Mattis enim ut tellus elementum sagittis vitae. Est lorem ipsum dolor sit amet consectetur. Volutpat maecenas volutpat blandit aliquam etiam. Malesuada fames ac turpis egestas integer eget aliquet. Amet venenatis urna cursus eget nunc scelerisque viverra. Sit amet risus nullam eget felis eget nunc lobortis.",
     },
     {
-      id: "1",
-      title: "Prof. Mohamad Hallal",
-      status: "professor",
-      image: "MH.jpeg",
+      id: "2",
+      title: "Andrew Boldi",
+      status: "",
+      image: "AB.jpg",
       disc: "Maecenas pharetra convallis posuere morbi leo urna. Pharetra massa massa ultricies mi. Mattis enim ut tellus elementum sagittis vitae. Est lorem ipsum dolor sit amet consectetur. Volutpat maecenas volutpat blandit aliquam etiam. Malesuada fames ac turpis egestas integer eget aliquet. Amet venenatis urna cursus eget nunc scelerisque viverra. Sit amet risus nullam eget felis eget nunc lobortis.",
     },
     {
-      id: "1",
-      title: "Prof. Mohamad Hallal",
-      status: "professor",
-      image: "MH.jpeg",
+      id: "3",
+      title: "Blake Martin",
+      status: "",
+      image: "BM.jpg",
       disc: "Maecenas pharetra convallis posuere morbi leo urna. Pharetra massa massa ultricies mi. Mattis enim ut tellus elementum sagittis vitae. Est lorem ipsum dolor sit amet consectetur. Volutpat maecenas volutpat blandit aliquam etiam. Malesuada fames ac turpis egestas integer eget aliquet. Amet venenatis urna cursus eget nunc scelerisque viverra. Sit amet risus nullam eget felis eget nunc lobortis.",
     },
     {
-      id: "1",
-      title: "Prof. Mohamad Hallal",
-      status: "professor",
-      image: "MH.jpeg",
-      disc: "Maecenas pharetra convallis posuere morbi leo urna. Pharetra massa massa ultricies mi. Mattis enim ut tellus elementum sagittis vitae. Est lorem ipsum dolor sit amet consectetur. Volutpat maecenas volutpat blandit aliquam etiam. Malesuada fames ac turpis egestas integer eget aliquet. Amet venenatis urna cursus eget nunc scelerisque viverra. Sit amet risus nullam eget felis eget nunc lobortis.",
+      id: "4",
+      title: "Syed Rayyan Ali",
+      status: "",
+      image: "SRA.jpg",
+      disc: "As an environmental engineer, my path is defined by a deep-seated commitment to sustainability and technological innovation. My approach is analytical yet intuitive, leveraging the power of Python to unravel complex, data-driven environmental challenges. \n \n My enthusiasm for technology goes hand-in-hand with my love for personal interactions. I am a firm believer that the seeds of environmental change are sown through genuine, one-on-one conversations that spark collective action. This belief is the cornerstone of my focus on outreach, as I strive to bridge the gap between data-centric solutions and community-based initiatives.",
     },
     {
-      id: "1",
-      title: "Prof. Mohamad Hallal",
-      status: "professor",
-      image: "MH.jpeg",
-      disc: "Maecenas pharetra convallis posuere morbi leo urna. Pharetra massa massa ultricies mi. Mattis enim ut tellus elementum sagittis vitae. Est lorem ipsum dolor sit amet consectetur. Volutpat maecenas volutpat blandit aliquam etiam. Malesuada fames ac turpis egestas integer eget aliquet. Amet venenatis urna cursus eget nunc scelerisque viverra. Sit amet risus nullam eget felis eget nunc lobortis.",
+      id: "5",
+      title: "Jude Alexis",
+      status: "",
+      image: "JA.jpg",
+      disc: "I leverage my unique combination of professional clinical experience, heavy technical exposure, bioscience interests, and a passion for ensuring the human good, to push the bleeding edge of medical progress. I believe in using technology to solve the problems that plague the modern world. In his free time I enjoy reading and playing chess.",
     },
     {
-      id: "1",
-      title: "Prof. Mohamad Hallal",
-      status: "professor",
-      image: "MH.jpeg",
-      disc: "Maecenas pharetra convallis posuere morbi leo urna. Pharetra massa massa ultricies mi. Mattis enim ut tellus elementum sagittis vitae. Est lorem ipsum dolor sit amet consectetur. Volutpat maecenas volutpat blandit aliquam etiam. Malesuada fames ac turpis egestas integer eget aliquet. Amet venenatis urna cursus eget nunc scelerisque viverra. Sit amet risus nullam eget felis eget nunc lobortis.",
+      id: "6",
+      title: "James Ma",
+      status: "",
+      image: "JM.jpg",
+      disc: "I am majoring in Electrical Engineering and Computer Sciences, with a passion for artificial intelligence and hands-on computer science projects. My determination to master Python and C++ and my keen interest in using these languages to solve challenging problems have shaped my coding journey. I'm motivated by the potential of AI to transform industries and everyday life. As I navigate my academic and project-based endeavors, I welcome the collaborative spirit of innovation and the chance to learn from pioneers in the field.",
     },
     {
-      id: "1",
-      title: "Prof. Mohamad Hallal",
-      status: "professor",
-      image: "MH.jpeg",
-      disc: "Maecenas pharetra convallis posuere morbi leo urna. Pharetra massa massa ultricies mi. Mattis enim ut tellus elementum sagittis vitae. Est lorem ipsum dolor sit amet consectetur. Volutpat maecenas volutpat blandit aliquam etiam. Malesuada fames ac turpis egestas integer eget aliquet. Amet venenatis urna cursus eget nunc scelerisque viverra. Sit amet risus nullam eget felis eget nunc lobortis.",
-    },
-    {
-      id: "1",
-      title: "Prof. Mohamad Hallal",
-      status: "professor",
-      image: "MH.jpeg",
+      id: "7",
+      title: "Ronald Ji",
+      status: "",
+      image: "RJ.jpg",
       disc: "Maecenas pharetra convallis posuere morbi leo urna. Pharetra massa massa ultricies mi. Mattis enim ut tellus elementum sagittis vitae. Est lorem ipsum dolor sit amet consectetur. Volutpat maecenas volutpat blandit aliquam etiam. Malesuada fames ac turpis egestas integer eget aliquet. Amet venenatis urna cursus eget nunc scelerisque viverra. Sit amet risus nullam eget felis eget nunc lobortis.",
     },
   ];
@@ -106,6 +99,7 @@
   //@ts-ignore
   function resetTilt(event) {
     const card = event.currentTarget;
+    card.style.transition = "transform 300ms ease";
     card.style.transform = "rotateX(0deg) rotateY(0deg)";
   }
 
@@ -114,13 +108,14 @@
     let member = members.find((member) =>
       ` ${event.currentTarget.className}`.includes(member.id)
     );
+    console.log(member)
     dispatch("displayModal", { modalText: member?.disc });
   }
 </script>
 
 <main>
+  <div id="team-title" class="headings">Meet the Team</div>
   <section id="about-container">
-    <div id="team-title">Meet the Team</div>
     <Sidescroll
       {members}
       {rows}
@@ -146,7 +141,7 @@
             <!-- svelte-ignore a11y-click-events-have-key-events -->
             <div
               id="gradientBorder"
-              class={member.id}
+              class="{member.id}"
               on:mousemove={handleTilt}
               on:mouseleave={resetTilt}
               on:click={spawnModal}
@@ -170,10 +165,7 @@
   //     display: grid;
   //   grid-template-columns: auto auto;
   #team-title {
-    position: relative;
-    margin-top: 60vh;
-    font-size: 54px;
-    font-weight: bold;
+    margin-top: 40%;
   }
   .team-bios {
     display: grid;
@@ -183,16 +175,13 @@
     max-width: 948px;
     padding: 24px;
     padding-bottom: 100px;
-    perspective: 1000px;
+    perspective: 2000px;
   }
 
   .description {
     position: absolute;
     text-align: left;
     align-items: center;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 5%;
     right: 0%;
     width: 70%;
     visibility: hidden;
@@ -220,16 +209,22 @@
     align-items: center;
     border-radius: 20px;
     overflow: hidden;
-  }
-  #gradientBorder:hover {
     padding: 6px;
-    background-color: white;
-    background: linear-gradient(to right, aquamarine, mediumpurple);
-    transition: ease 50ms;
   }
 
-  .card:not(:hover) {
-    transition: ease 300ms;
+  #gradientBorder:hover {
+    padding: 6px;
+    background: linear-gradient(to right, aquamarine, mediumpurple);
+    animation: bgRotate 5s linear infinite;
+  }
+
+  @keyframes bgRotate {
+    0% {
+      background-position: 0% 0%;
+    }
+    100% {
+      background-position: 100% 100%;
+    }
   }
 
   .card > h6 {

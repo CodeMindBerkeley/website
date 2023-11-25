@@ -8,14 +8,16 @@
   import Description from "./Description.svelte";
   import About from "./About.svelte";
   import Modal from "./Modal.svelte";
+  import FAQ from "./FAQ.svelte";
 
-  let comp = [MainContainer, MissionContainer, Description, About];
+  let comp = [MainContainer, MissionContainer, Description, About, FAQ];
 
   let showModal = false;
   let modalText = "";
 
   let currentIndex = 0;
-  let threshold = 4; // Set a threshold for scroll sensitivity
+  let threshold = 3; // Set a threshold for scroll sensitivity
+  export let accumulatedDeltaYScroll: number;
   let accumulatedDeltaY = 0;
 
   let lastInvocation = 0;
@@ -40,10 +42,12 @@
       currentIndex = Math.max(currentIndex - 1, 0);
       accumulatedDeltaY = 0;
     }
+    accumulatedDeltaYScroll = 100/4.09 * (currentIndex + accumulatedDeltaY / 4.09);
   }
 </script>
 
 <main>
+  <div id="progress" style="width: {accumulatedDeltaYScroll}%;"></div>
   <div id="scrollHandler" on:wheel={handleScroll}>
     <Background />
     <Blob />
@@ -72,6 +76,20 @@
 </main>
 
 <style>
+  #progress {
+    position: fixed;
+    z-index: 500000;
+    background-color: white;
+    color: white;
+    height: 5px;
+    top: 0;
+    left: 0;
+    min-width: 5px !important;
+    width: 5px;
+    overflow-y: hidden;
+    border-radius: 5px;
+    transition: width 300ms ease;
+  }
   #scrollHandler {
     margin: 0;
     overflow: hidden;

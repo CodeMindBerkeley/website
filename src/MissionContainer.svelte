@@ -16,6 +16,7 @@
 </script>
 
 <main>
+  <div class="headings">Our Mission</div>
   <section id="mission-container">
     <div id="mission-title">
       Empowering the next generation of visionaries with cutting-edge programs.
@@ -25,10 +26,9 @@
 
 <style>
   #mission-container {
+    margin-top: 0px;
     z-index: 4000;
     width: 100%;
-    display: flex;
-    align-items: center;
   }
   #mission-title {
     font-weight: bold;

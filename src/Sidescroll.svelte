@@ -99,7 +99,7 @@
   <!-- svelte-ignore a11y-no-static-element-interactions -->
   <div id="interactable" class="nav" on:click={moveLeft}>
     {#if movement[0]}
-      <Fa size="3x" class="arrow" icon={faChevronLeft} />
+      <Fa size="3x" id="interactable" class="arrow-icon" icon={faChevronLeft} />
     {/if}
   </div>
 
@@ -108,7 +108,12 @@
   <!-- svelte-ignore a11y-no-static-element-interactions -->
   <div id="interactable" class="nav" on:click={moveRight}>
     {#if movement[1]}
-      <Fa size="3x" class="arrow" icon={faChevronRight} />
+      <Fa
+        id="interactable"
+        size="3x"
+        class="arrow-icon"
+        icon={faChevronRight}
+      />
     {/if}
   </div>
 </div>

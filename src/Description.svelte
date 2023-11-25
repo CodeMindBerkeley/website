@@ -50,6 +50,7 @@
 
   let currentStepIndex = 0;
   let interval: number | undefined;
+  let currentProgress: number = 0;
   let isHovering = false;
 
   onMount(() => {
@@ -65,11 +66,12 @@
     interval = setInterval(() => {
       if (!isHovering) {
         currentStepIndex = (currentStepIndex + 1) % steps.length;
+        handleProgress();
       }
     }, 5000);
   });
 
-  function handleMouseEnter(event) {
+  function handleMouseEnter(event: any) {
     // Pause the iteration
     isHovering = true;
 
@@ -102,6 +104,10 @@
     // Fade in animation for #stepDisc
     gsap.to("#stepDisc", { opacity: 1, duration: 1 });
   }
+
+  function handleProgress() {
+    currentProgress = (currentStepIndex / (steps.length)) * 72;
+  }
 </script>
 
 <main>
@@ -111,9 +117,10 @@
       id="timeline-container"
       on:mouseover={handleMouseEnter}
       on:focus
+      on:mousemove={handleProgress}
       on:mouseleave={handleMouseLeave}
     >
-      <Timeline {steps} {currentStepIndex} />
+      <Timeline {steps} {currentStepIndex} {currentProgress}/>
     </div>
     <div id="stepDisc">{steps[currentStepIndex].disc}</div>
   </section>
