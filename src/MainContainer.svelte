@@ -17,12 +17,12 @@
 
 <main>
   <section id="main-container">
-    <div id="h1">Code Mind Berkeley</div>
+    <div class="headings" id="h1">Code Mind Berkeley</div>
     <div id="h2">
       Interdisciplinary CS research with UC Berkeley Professors and Students
     </div>
     <button id="interactable" class="button button2"
-      >Sign up For the Webinar</button
+      >Start Here</button
     >
   </section>
 </main>

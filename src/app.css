@@ -49,9 +49,6 @@ text-align: center;
   text-align: center;
   }
 
-div {
-  text-shadow: rgb(190, 190, 190) 1px 0 10px;
-}
 br {
 display: block;
 margin: 0px 0;
@@ -75,6 +72,7 @@ body {
   background: linear-gradient(to right, #2c3263, #1b1b27 5%, #1b1b27 95%, #2c3263 100%);
 }
 .headings {
+  text-shadow: rgb(190, 190, 190) 1px 0 10px;
   position: relative;
   font-size: 54px;
   font-weight: bold;

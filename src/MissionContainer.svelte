@@ -16,8 +16,8 @@
 </script>
 
 <main>
-  <div class="headings">Our Mission</div>
   <section id="mission-container">
+    <div class="headings">Our Mission</div>
     <div id="mission-title">
       Empowering the next generation of visionaries with cutting-edge programs.
     </div>
@@ -26,7 +26,9 @@
 
 <style>
   #mission-container {
-    margin-top: 0px;
+    top: 25%;
+    position: absolute;
+    left: 0;
     z-index: 4000;
     width: 100%;
   }
@@ -34,8 +36,8 @@
     font-weight: bold;
     font-size: 48px;
     z-index: 4000;
-    padding-left: 15%;
-    padding-right: 15%;
+    padding-left: 20%;
+    padding-right: 20%;
     text-align: center;
     background: linear-gradient(to right, #6873d4, #ffffff 80%);
     -webkit-text-fill-color: transparent;
