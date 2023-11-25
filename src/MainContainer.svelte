@@ -2,6 +2,11 @@
   import { onMount } from "svelte";
   // @ts-ignore
   import { gsap } from "gsap";
+  import { navigate } from "svelte-routing";
+
+  function navigateToNewPage() {
+    navigate("/application");
+  }
 
   onMount(() => {
     // GSAP animation for MainContainer
@@ -21,8 +26,10 @@
     <div id="h2">
       Interdisciplinary CS research with UC Berkeley Professors and Students
     </div>
-    <button id="interactable" class="button button2"
-      >Start Here</button
+    <button
+      on:click={navigateToNewPage}
+      id="interactable"
+      class="button button2">Start Here</button
     >
   </section>
 </main>
