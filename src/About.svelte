@@ -27,7 +27,7 @@
       title: "Prof. Mohamad Hallal",
       status: "professor",
       image: MH,
-      disc: "Maecenas pharetra convallis posuere morbi leo urna. Pharetra massa massa ultricies mi. Mattis enim ut tellus elementum sagittis vitae. Est lorem ipsum dolor sit amet consectetur. Volutpat maecenas volutpat blandit aliquam etiam. Malesuada fames ac turpis egestas integer eget aliquet. Amet venenatis urna cursus eget nunc scelerisque viverra. Sit amet risus nullam eget felis eget nunc lobortis.",
+      disc: "Mohamad Hallal is an Assistant Teaching Professor of Civil and Environmental Engineering at UC Berkeley specializing in data science and computation in the context of civil and environmental engineering. As the civil and environmental engineering field undergoes a revolution fueled by the proliferation of data, Hallal aims to equip rising civil and environmental engineers with state-of-the-art data science and computation skills to address the most significant societal-scale challenges. \n As a geotechnical engineering researcher and geostatistics enthusiast, Hallal's research focuses on integrating multidisciplinary tools to develop holistic methods spanning subsurface imaging and applications in natural hazards engineering with high societal impact.",
     },
     {
       id: "1",
