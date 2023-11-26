@@ -2,6 +2,7 @@
   import { onMount } from "svelte";
   // @ts-ignore
   import { gsap } from "gsap";
+  // @ts-ignore
   import { navigate } from "svelte-routing";
 
   function navigateToNewPage() {

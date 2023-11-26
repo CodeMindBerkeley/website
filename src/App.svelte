@@ -1,8 +1,10 @@
-<script>
+<script lang="ts">
+  // @ts-ignore
   import { Router, Route, Link } from "svelte-routing";
   import Application from "./Application.svelte";
   import Home from "./Home.svelte";
   // Import other pages as needed
+
 </script>
 
 <Router>

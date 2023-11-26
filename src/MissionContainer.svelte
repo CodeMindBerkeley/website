@@ -19,7 +19,7 @@
   <section id="mission-container">
     <div class="headings">Our Mission</div>
     <div id="mission-title">
-      Empowering the next generation of visionaries with cutting-edge programs.
+      Empowering the next generation of visionaries with cutting-edge research programs.
     </div>
   </section>
 </main>
@@ -41,6 +41,7 @@
     text-align: center;
     background: linear-gradient(to right, #6873d4, #ffffff 80%);
     -webkit-text-fill-color: transparent;
+    background-clip: text;
     -webkit-background-clip: text;
     text-shadow: none;
   }

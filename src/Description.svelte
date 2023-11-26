@@ -13,38 +13,38 @@
   let steps = [
     {
       index: 0,
-      step: "12/12",
+      step: "Dec 2023",
       image: faHandshake,
       text: "Informational Webinar",
       disc: "All propsective applicants begin by attending a 1 hour webinar through Zoom where you'll meet the team and learn more about the services we offer. During this meeting, you will receive a link to the payment link and ",
     },
     {
       index: 1,
-      step: "12/12",
+      step: "Jan 2024",
       image: faRightToBracket,
       text: "Onboarding",
       disc: "After payment, you'll have one week to complete questions regarding your programming experience, academic interests, and time commitment. During this time, you'll have orientation meetings and reading assignments to prepare for the research project.",
     },
     {
       index: 2,
-      step: "02/04/2024",
+      step: "Feb 2024",
       image: faPenToSquare,
       text: "Project Assignments",
-      disc: "On February 4, 2024, you will receive an email about your research project assignment and team members. Research projects will officially begin the following day.",
+      disc: "In early February, you will receive an email about your research project assignment and team members. Research projects will officially begin the following day.",
     },
+    // {
+    //   index: 3,
+    //   step: "April 2024",
+    //   image: faMagnifyingGlass,
+    //   text: "Midpoint Evaluation",
+    //   disc: "Around the 8 week mark, students will present their progress to their ",
+    // },
     {
       index: 3,
-      step: "12/12",
-      image: faMagnifyingGlass,
-      text: "Midpoint Evaluation",
-      disc: "idk lol",
-    },
-    {
-      index: 4,
-      step: "05/25/24",
+      step: "May 2024",
       image: faPersonChalkboard,
-      text: "Projects Symposium",
-      disc: "At the end of the term on May 25, 2024, ",
+      text: "Symposium",
+      disc: "At the end of the term, students will present their projects in a formal academic style to their professors. Students will also attend an in-person event to present their work to students.",
     },
   ];
 
@@ -133,7 +133,7 @@
   }
   #stepDisc {
     font-size: 36px;
-    width: 68%;
+    width: 65%;
     height: 30vh;
     text-align: left;
     margin-top: 2%;

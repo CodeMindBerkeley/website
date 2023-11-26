@@ -1,8 +1,12 @@
 <script lang="ts">
   import { onDestroy, onMount } from "svelte";
   import { gsap } from "gsap";
+  // @ts-ignore
+  import Fa from "svelte-fa/src/fa.svelte";
   import { createEventDispatcher } from "svelte";
+  import { faClose } from "@fortawesome/free-solid-svg-icons";
   export let modalText = "";
+  export let modalName = "";
 
   const dispatch = createEventDispatcher();
 
@@ -60,6 +64,10 @@
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div id="modal-container" class="background" on:click|self={removeMyComponent}>
   <div class="modal" on:click|self={removeMyComponent} on:keyup>
+    <div id="title" class="headings">{modalName}</div>
+    <span id="x" on:click={removeMyComponent}>
+      <Fa icon={faClose}/>
+    </span>
     <p id="h5">{modalText}</p>
   </div>
 </div>
@@ -73,13 +81,39 @@
     backdrop-filter: blur(1vmax);
   }
   .modal {
+    margin-top: 5% !important;
     padding: 100px;
-    max-width: 50%;
+    max-width: 60%;
     margin: 10% auto;
     text-align: left;
     background: rgba(0, 0, 0, 0);
     border: solid white;
     border-radius: 50px;
     border-width: 1px;
+  }
+  p {
+    font-size: 28px !important;
+    white-space: pre-line;
+    text-align: justify !important;
+    text-justify: inter-word !important;
+  }
+
+  #x {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 3rem;
+    padding: 10px 20px;
+    border-radius: 25px;
+    transition: all 300ms ease;
+    &:hover {
+      background: rgba(255, 255, 255, 0.1);
+      cursor: pointer;
+    }
+  }
+
+  #title {
+    text-align: center;
+    margin: 0;
   }
 </style>

@@ -26,21 +26,21 @@
       title: "Genesis Nguyen",
       status: "",
       image: "GN.jpg",
-      disc: "Maecenas pharetra convallis posuere morbi leo urna. Pharetra massa massa ultricies mi. Mattis enim ut tellus elementum sagittis vitae. Est lorem ipsum dolor sit amet consectetur. Volutpat maecenas volutpat blandit aliquam etiam. Malesuada fames ac turpis egestas integer eget aliquet. Amet venenatis urna cursus eget nunc scelerisque viverra. Sit amet risus nullam eget felis eget nunc lobortis.",
+      disc: "CEO of CodeMind Berkeley \n CMO at WCMM \n Cofounder at SubHub \n ML / Biotech Engineer at the Cochran Lab Plastics teams",
     },
     {
       id: "2",
       title: "Andrew Boldi",
       status: "",
       image: "AB.jpg",
-      disc: "Maecenas pharetra convallis posuere morbi leo urna. Pharetra massa massa ultricies mi. Mattis enim ut tellus elementum sagittis vitae. Est lorem ipsum dolor sit amet consectetur. Volutpat maecenas volutpat blandit aliquam etiam. Malesuada fames ac turpis egestas integer eget aliquet. Amet venenatis urna cursus eget nunc scelerisque viverra. Sit amet risus nullam eget felis eget nunc lobortis.",
+      disc: "As Code Mind Berkeley's CTO, Andrew brings technical experience from synthetic organic chemistry, machine learning, computational organic chemistry, statistical physics, quantum mechanics, assembly language, and many others fields. Andrew has worked previously on the total synthesis of molecules at a Caltech chemistry lab and leveraged computational algorithms to accelerate scientific discovery. He's also taken the lead on several CS-based projects such as developing a novel search algorithm for scenic navigation and leveraging deep learning for predicting chemical properties. Andrew has also contributed to open-source computational chemistry libraries, self-driving car libraries, projects exploring the intersection of math, programming, and music, a 3D graphing engine, and an interactive physics simulation. Andrew was also a Program Director for STEMPower, a nonprofit organization for providing STEM workshops to elementary students and YAPA Kids, where he was a Math Co-Program Leader over 460+ students. In his free time, Andrew plays piano where he's performed at Carnegie Hall, performed at banquets with 500+ people, and won 1st place at multiple national competitions. Andrew is currently studying chemical engineering at UC Berkeley with a minor in Electrical Engineering & Computer Science.",
     },
     {
       id: "3",
       title: "Blake Martin",
       status: "",
       image: "BM.jpg",
-      disc: "Maecenas pharetra convallis posuere morbi leo urna. Pharetra massa massa ultricies mi. Mattis enim ut tellus elementum sagittis vitae. Est lorem ipsum dolor sit amet consectetur. Volutpat maecenas volutpat blandit aliquam etiam. Malesuada fames ac turpis egestas integer eget aliquet. Amet venenatis urna cursus eget nunc scelerisque viverra. Sit amet risus nullam eget felis eget nunc lobortis.",
+      disc: "",
     },
     {
       id: "4",
@@ -105,11 +105,14 @@
 
   //@ts-ignore
   function spawnModal(event) {
+    console.log(event.currentTarget);
     let member = members.find((member) =>
-      ` ${event.currentTarget.className}`.includes(member.id)
+      `${event.currentTarget.id.toString()}`.includes(member.id)
     );
-    console.log(member)
-    dispatch("displayModal", { modalText: member?.disc });
+    dispatch("displayModal", { 
+      modalText: member?.disc,
+      modalName: member?.title 
+    });
   }
 </script>
 
@@ -140,15 +143,14 @@
             <!-- svelte-ignore a11y-no-static-element-interactions -->
             <!-- svelte-ignore a11y-click-events-have-key-events -->
             <div
-              id="gradientBorder"
-              class="{member.id}"
+              id="{member.id}"
+              class="gradientBorder"
               on:mousemove={handleTilt}
               on:mouseleave={resetTilt}
               on:click={spawnModal}
             >
               <div
-                id="interactable"
-                class="card {member.status}"
+                class="card {member.status} interactable"
                 style="background-image: url('src/assets/img/{member.image}');"
               >
                 <h6>{member.title}</h6>
@@ -162,10 +164,9 @@
 </main>
 
 <style lang="scss">
-  //     display: grid;
-  //   grid-template-columns: auto auto;
   #team-title {
-    margin-top: 40%;
+    margin-top: 50%;
+    margin-bottom: 0;
   }
   .team-bios {
     display: grid;
@@ -204,7 +205,7 @@
     transform-style: preserve-3d;
     background-size: cover;
   }
-  #gradientBorder {
+  .gradientBorder {
     display: flex;
     align-items: center;
     border-radius: 20px;
@@ -212,13 +213,13 @@
     padding: 6px;
   }
 
-  #gradientBorder:hover {
+  .gradientBorder:hover {
     padding: 6px;
     background: linear-gradient(to right, aquamarine, mediumpurple);
     transition: all 100ms ease;
   }
 
-  #gradientBorder:not(:hover) {
+  .gradientBorder:not(:hover) {
     transition: all 100ms ease;
   }
 

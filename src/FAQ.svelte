@@ -46,7 +46,7 @@
   onMount(() => {
     // GSAP animation for MainContainer
     let mainContainerTimeline = gsap.timeline();
-    containerHeight = faqContainer.clientHeight - 246; // 246 to remove title shifting
+    containerHeight = faqContainer.clientHeight - 63; // 246 to remove title shifting
     mainContainerTimeline.from("#faq-container", {
       opacity: 0,
       duration: 1,
@@ -56,8 +56,8 @@
 </script>
 
 <main>
+  <div id="faq-title" class="headings">Frequently Asked Questions</div>
   <section id="faq-container" bind:this={faqContainer}>
-    <div class="headings">Frequently Asked Questions</div>
     <div id="allEncapsulating">
       {#each accordionItems as item, index}
         <!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -100,6 +100,7 @@
 <style>
   #faq-container {
     overflow: hidden !important;
+    height: 40% !important;
   }
   .accordion-item {
     border: 1px solid #ccc;
@@ -108,6 +109,9 @@
     cursor: pointer;
     overflow: hidden;
     transition: all 200ms ease;
+    max-width: 40rem;
+    margin: auto auto;
+    text-align: left;
 
     &:hover {
       border-radius: 50px;
@@ -117,7 +121,9 @@
 
   .title {
     font-weight: bold;
-    font-size: 1.2em; /* Larger font size */
+    font-size: 1.5em; /* Larger font size */
+    text-shadow: rgb(190, 190, 190) 1px 0 10px;
+    padding: 10px;
   }
 
   .content {

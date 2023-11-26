@@ -8,7 +8,7 @@
 </script>
 
 <main>
-  <div class="headings">Timeline</div>
+  <div class="headings">Spring 2024 Timeline</div>
   <div class="timeline-toprow">
     {#each steps as step}
       <div class="timeline-steps">{step.step}</div>
@@ -73,30 +73,24 @@
     margin-right: $spacing;
     margin-left: $spacing;
   }
-
-  .timeline-line {
+  @mixin lineStuff {
     display: block;
     position: absolute;
-    width: 56.5%;
-    left: 21%;
+    width: 52.5%;
+    left: 23%;
     height: 5px;
-    background-color: #a1b9ed;
     margin-top: 15px;
-    // margin-left: $spacingTwo;
-    // margin-right: $spacingTwo;
+  }
+  .timeline-line {
+    @include lineStuff;
+    background-color: #a1b9ed;
   }
   .timeline-progress{
-    z-index: 1;
-    display: block;
-    position: absolute;
-    width: 56.5%;
-    left: 21%;
-    height: 5px;
+    @include lineStuff;
     background-color: #ffffff;
-    margin-top: 15px;
-    // margin-left: $spacingTwo;
-    // margin-right: $spacingTwo;
   }
+
+  
   .timeline-circle {
     background-color: #9a9ce9;
     border: 1px solid #9a9ce9;
@@ -115,11 +109,11 @@
     background-color: white;
   }
 
-  .timeline-circle img {
-    margin: 6px;
-    width: 20px;
-    height: 20px;
-  }
+  // .timeline-circle img {
+  //   margin: 6px;
+  //   width: 20px;
+  //   height: 20px;
+  // }
 
   .timeline-bottomrow {
     display: flex;
@@ -143,12 +137,12 @@
     font-weight: 500;
   }
 
-  .timeline-body {
-    display: flex;
-    justify-content: center;
-    font-family: "Karla", sans-serif;
-    font-size: 18px;
-    font-weight: 400;
-    margin-top: 10px;
-  }
+  // .timeline-body {
+  //   display: flex;
+  //   justify-content: center;
+  //   font-family: "Karla", sans-serif;
+  //   font-size: 18px;
+  //   font-weight: 400;
+  //   margin-top: 10px;
+  // }
 </style>
