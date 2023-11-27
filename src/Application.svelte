@@ -8,8 +8,6 @@
   import Background from "./Background.svelte";
   import Frq from "./FRQ.svelte";
 
-  let movement = [false, false];
-
   let scrollContainer: HTMLDivElement;
 
   let qs = [
@@ -20,28 +18,10 @@
     { question: "Blah Bla Blah Blah" },
   ];
 
-  function moveLeft() {
+  function moveRight() {
     const firstElement = qs.shift();
     //@ts-ignore
     qs.push(firstElement);
-
-    qs = qs;
-
-    let mainContainerTimeline = gsap.timeline();
-
-    mainContainerTimeline.from(".frq-container", {
-      opacity: 0,
-      duration: 0.3,
-      x: 20,
-    });
-  }
-
-  function moveRight() {
-    const lastElement = qs.pop();
-    //@ts-ignore
-    qs.unshift(lastElement);
-
-    qs = qs;
 
     let mainContainerTimeline = gsap.timeline();
 
@@ -49,6 +29,20 @@
       opacity: 0,
       duration: 0.3,
       x: -20,
+    });
+  }
+
+  function moveLeft() {
+    const lastElement = qs.pop();
+    //@ts-ignore
+    qs.unshift(lastElement);
+
+    let mainContainerTimeline = gsap.timeline();
+
+    mainContainerTimeline.from(".frq-container", {
+      opacity: 0,
+      duration: 0.3,
+      x: 20,
     });
   }
 
@@ -74,6 +68,8 @@
       moveLeft();
       console.log(qs);
     }
+
+    qs = qs;
   }
 
   //test
@@ -87,40 +83,16 @@
 
   <!-- svelte-ignore a11y-click-events-have-key-events -->
   <!-- svelte-ignore a11y-no-static-element-interactions -->
-  <div class="applicationTitle" id="applicationTitle">Webinar Intrest Form</div>
+  <div class="applicationTitle" id="applicationTitle">Webinar Signup Form</div>
 
   <div bind:this={scrollContainer} class="frq-container">
     {#each qs as q}
       <Frq title={q.question} width={"500px"} />
     {/each}
   </div>
-
-  <div class="applicationTitle" id="navigation-buttons">
-    <button type="button" id="interactable" on:click={moveRight}>Back</button>
-    <button type="button" id="interactable" on:click={moveLeft}>Forward</button>
-  </div>
 </main>
 
 <style>
-  button {
-    margin-top: 2%;
-    margin-right: 1%;
-    border-radius: 32px;
-    padding: 20px;
-    font-size: 16px;
-    background-color: #5e6ad2;
-    border: none;
-    color: white;
-    width: 10%;
-    display: inline-block;
-  }
-  button:hover {
-    cursor: pointer;
-    background-color: #7881d3;
-  }
-  #navigation-buttons {
-    text-align: center;
-  }
   .frq-container {
     display: flex;
     width: 200%;

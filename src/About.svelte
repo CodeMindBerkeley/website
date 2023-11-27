@@ -15,8 +15,8 @@
 
   const dispatch = createEventDispatcher();
 
-  let rows = 2;
-  let columns = 3;
+  let rows = 1;
+  let columns = 4;
 
   let modulatedMembers = [
     { id: "", title: "", status: "", image: "", disc: "" },
@@ -27,7 +27,7 @@
       title: "Prof. Mohamad Hallal",
       status: "professor",
       image: MH,
-      disc: "Mohamad Hallal is an Assistant Teaching Professor of Civil and Environmental Engineering at UC Berkeley specializing in data science and computation in the context of civil and environmental engineering. As the civil and environmental engineering field undergoes a revolution fueled by the proliferation of data, Hallal aims to equip rising civil and environmental engineers with state-of-the-art data science and computation skills to address the most significant societal-scale challenges. \n As a geotechnical engineering researcher and geostatistics enthusiast, Hallal's research focuses on integrating multidisciplinary tools to develop holistic methods spanning subsurface imaging and applications in natural hazards engineering with high societal impact.",
+      disc: "Mohamad Hallal is an Assistant Teaching Professor of Civil and Environmental Engineering at UC Berkeley specializing in data science and computation in the context of civil and environmental engineering. As the civil and environmental engineering field undergoes a revolution fueled by the proliferation of data, Hallal aims to equip rising civil and environmental engineers with state-of-the-art data science and computation skills to address the most significant societal-scale challenges. \n \n As a geotechnical engineering researcher and geostatistics enthusiast, Hallal's research focuses on integrating multidisciplinary tools to develop holistic methods spanning subsurface imaging and applications in natural hazards engineering with high societal impact.",
     },
     {
       id: "1",
@@ -181,7 +181,7 @@
     grid-template-columns: auto auto auto;
     align-items: center;
     gap: 16px;
-    max-width: 948px;
+    max-width: 100%;
     padding: 24px;
     padding-bottom: 100px;
     perspective: 2000px;
