@@ -6,7 +6,7 @@
   import { navigate } from "svelte-routing";
 
   function navigateToNewPage() {
-    navigate("/application");
+    window.open("https://calendly.com/nguyengenesis10/berkeley-students-mentorship-program-webinar", "_blank")
   }
 
   onMount(() => {

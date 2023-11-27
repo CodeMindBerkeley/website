@@ -46,7 +46,7 @@
   onMount(() => {
     // GSAP animation for MainContainer
     let mainContainerTimeline = gsap.timeline();
-    containerHeight = faqContainer.clientHeight - 63; // 246 to remove title shifting
+    containerHeight = faqContainer.clientHeight - 101.325; // 101.325 to remove title shifting
     mainContainerTimeline.from("#faq-container", {
       opacity: 0,
       duration: 1,
@@ -104,17 +104,16 @@
   }
   .accordion-item {
     border: 1px solid #ccc;
-    margin: 10px;
+    margin: 20px auto;
+    border-radius: 40px;
     padding: 30px;
     cursor: pointer;
     overflow: hidden;
     transition: all 200ms ease;
     max-width: 40rem;
-    margin: auto auto;
     text-align: left;
 
     &:hover {
-      border-radius: 50px;
       background-color: rgba(255, 255, 255, 0.1);
     }
   }

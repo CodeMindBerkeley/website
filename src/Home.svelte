@@ -13,6 +13,9 @@
   import { accumulatedDeltaYScroll, currentIndex } from "./main";
 
   let comp = [MainContainer, MissionContainer, Description, About, FAQ];
+  let mobile: boolean = window.innerWidth <= 800;
+
+
 
   let showModal = false;
   let modalText = "";
@@ -48,34 +51,40 @@
 </script>
 
 <main>
-    <div id="progress" style="width: {$accumulatedDeltaYScroll}%;"></div>
-    <Header />
-    <div id="scrollHandler" on:wheel={handleScroll}>
-    <Background />
-    <Blob />
-    <Blur />
+    {#if !mobile}
+      <div id="progress" style="width: {$accumulatedDeltaYScroll}%;"></div>
+      <Header />
+      <div id="scrollHandler" on:wheel={handleScroll}>
+      <Background />
+      <Blob />
+      <Blur />
 
-    <svelte:component
-      this={comp[$currentIndex]}
-      on:displayModal={(e) => {
-        showModal = true;
-        modalText = e.detail.modalText;
-        modalName = e.detail.modalName;
-      }}
-    />
-    {#if showModal}
-      <Modal
-        {modalText}
-        {modalName}
-        on:click={() => {
-          showModal = false;
+      <svelte:component
+        this={comp[$currentIndex]}
+        on:displayModal={(e) => {
+          showModal = true;
+          modalText = e.detail.modalText;
+          modalName = e.detail.modalName;
         }}
       />
-    {/if}
-  </div>
+      {#if showModal}
+        <Modal
+          {modalText}
+          {modalName}
+          on:click={() => {
+            showModal = false;
+          }}
+        />
+      {/if}
+    </div>
 
-  {#if $currentIndex == comp.length - 1}
-    <Footer />
+    {#if $currentIndex == comp.length - 1}
+      <Footer />
+    {/if}
+  {:else}
+      <Background />
+      <MainContainer />
+
   {/if}
 </main>
 

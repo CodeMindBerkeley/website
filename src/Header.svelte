@@ -31,11 +31,10 @@
 
 <style lang="scss">
     #header-container {
-        font-size: 1.2rem;
         overflow: hidden;
         position: absolute;
         z-index: 2934123;
-        height: 40px;
+        height: 30px;
         min-width: 25%;
         left: 50%;
         transform: translateX(-50%);
@@ -51,11 +50,11 @@
             padding: 10px 20px;
             border-radius: 12px;
             transition: all 222ms ease;
+            font-size: 1.2rem;
 
             &:hover {
                 background: rgba(255, 255, 255, 0.1);
                 cursor: pointer;
-
             }
         }
     }

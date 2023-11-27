@@ -15,7 +15,7 @@
 
   const dispatch = createEventDispatcher();
 
-  let rows = 1;
+  let rows = 2;
   let columns = 4;
 
   let modulatedMembers = [
@@ -172,13 +172,17 @@
 </main>
 
 <style lang="scss">
+  #about-container {
+    height: auto;
+    margin: auto;
+  }
   #team-title {
     margin-top: 50%;
     margin-bottom: 0;
   }
   .team-bios {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto auto auto;
     align-items: center;
     gap: 16px;
     max-width: 100%;
