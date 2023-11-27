@@ -14,7 +14,7 @@
   let accordionItems = [
     { title: "How much does the program cost?", content: "The cost will be revealed once attending the first informational webinar." },
     { title: "How do I pay?", content: "You will receive a link to the payment also during the informational webinar." },
-    { title: "Question 3", content: "Consectetur adipiscing elit..." },
+    { title: "Do I need programming experience", content: "Not at all! The only prerequisite is a passion for learning!" },
     { title: "Is this program officially associated with UC Berkeley?", content: "No, Code Mind Berkeley is simply a service provided by UC Berkeley Students and Professors but we are not officially associated with the university." },
   ];
 

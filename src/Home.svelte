@@ -18,7 +18,7 @@
   let modalText = "";
   let modalName = "";
 
-  let threshold = 3; // Set a threshold for scroll sensitivity
+  let threshold = 4; // Set a threshold for scroll sensitivity
   let accumulatedDeltaY = 0;
 
   let lastInvocation = 0;
