@@ -63,7 +63,7 @@
     margin-top: 20px; /* Add some space above the text area */
     background-color: rgba(255, 255, 255, 0.02);
     border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 0.5%;
+    padding: 2%;
     border-radius: 10px;
     position: relative;
   }
