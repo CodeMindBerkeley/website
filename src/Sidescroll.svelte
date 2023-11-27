@@ -97,7 +97,7 @@
 <div class="arrow-container">
   <!-- svelte-ignore a11y-click-events-have-key-events -->
   <!-- svelte-ignore a11y-no-static-element-interactions -->
-  <div id="interactable" class="nav" on:click={moveLeft}>
+  <div class="nav interactable" on:click={moveLeft}>
     {#if movement[0]}
       <Fa size="3x" id="interactable" class="arrow-icon" icon={faChevronLeft} />
     {/if}
@@ -106,12 +106,11 @@
   <slot />
   <!-- svelte-ignore a11y-click-events-have-key-events -->
   <!-- svelte-ignore a11y-no-static-element-interactions -->
-  <div id="interactable" class="nav" on:click={moveRight}>
+  <div class="nav interactable" on:click={moveRight}>
     {#if movement[1]}
       <Fa
-        id="interactable"
         size="3x"
-        class="arrow-icon"
+        class="arrow-icon interactable"
         icon={faChevronRight}
       />
     {/if}

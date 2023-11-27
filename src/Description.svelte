@@ -76,9 +76,9 @@
     isHovering = true;
 
     // Check if the id contains 'interactable'
-    if (event.target.id.includes("interactable")) {
+    if (event.target.classList.contains("interactable")) {
       // Extract the number from the id
-      const idParts = event.target.id.match(/interactable (\d+)/);
+      const idParts = event.target.id.match(/(\d+)/);
       if (idParts && idParts.length > 1) {
         // Set currentStepIndex to the extracted number
         currentStepIndex = parseInt(idParts[1], 10);

@@ -21,14 +21,13 @@
     <!-- svelte-ignore a11y-no-static-element-interactions -->
     <!-- svelte-ignore a11y-mouse-events-have-key-events -->
     <div
-      id="interactable"
       style="width: {width}; max-width: {width}; min-width: {width};"
       class="card"
       bind:this={card}
       on:mousemove={cardHover}
     >
-      <div id="question-interactable">{title}</div>
-      <div id="input-holder-interactable">
+      <div id="question">{title}</div>
+      <div id="input-holder">
         <!-- Calendly inline widget begin -->
         <div
           class="calendly-inline-widget"
@@ -47,10 +46,10 @@
 </main>
 
 <style>
-  #input-holder-interactable {
+  #input-holder {
     padding: 4%;
   }
-  #text-input-interactable {
+  #text-input {
     width: 100%; /* Set the width to fit the container */
     height: 45vh;
     overflow-y: scroll;
@@ -62,7 +61,7 @@
     outline: none;
     z-index: 0;
   }
-  #question-interactable {
+  #question {
     font-size: 36px;
     max-width: 660px;
     text-align: left;

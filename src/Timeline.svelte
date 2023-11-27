@@ -19,11 +19,12 @@
   <div class="timeline-midrow">
     {#each steps as step}
       <div
-        id="interactable {step.index}"
-        class="timeline-circle {currentStepIndex === step.index ? 'active' : ''}"
+        id="{step.index}"
+        class="interactable timeline-circle {currentStepIndex === step.index ? 'active' : ''}"
       >
         <Fa
-          id="interactable {step.index}"
+          id="{step.index}"
+          class="interactable"
           color={currentStepIndex === step.index ? "#9a9ce9" : "white"}
           size="1x"
           translateY={0.5}

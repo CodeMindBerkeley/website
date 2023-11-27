@@ -22,14 +22,13 @@
     <!-- svelte-ignore a11y-no-static-element-interactions -->
     <!-- svelte-ignore a11y-mouse-events-have-key-events -->
     <div
-      id="interactable"
       style="width: {width}; max-width: {width}; min-width: {width};"
-      class="card"
+      class="card interactable"
       bind:this={card}
       on:mouseover={cardHover}
     >
-      <div id="question-interactable">{title}</div>
-      <div id="input-holder-interactable">
+      <div id="question" class="interactable">{title}</div>
+      <div id="input-holder" class="interactable">
         {#each choices as choice}
           <div id="questionHolder">
             <input
@@ -63,13 +62,13 @@
     margin-bottom: 20px;
     overflow: hidden;
   }
-  #input-holder-interactable {
+  #input-holder {
     padding: 4%;
     display: flex;
     flex-direction: column;
     align-items: left;
   }
-  #question-interactable {
+  #question {
     font-size: 36px;
     max-width: 660px;
     text-align: left;

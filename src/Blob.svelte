@@ -11,7 +11,7 @@
       // @ts-ignore
       if (event.target && event.target.id) {
         // @ts-ignore
-        if (event.target.id.includes("interactable")) {
+        if (event.target.classList.contains("interactable")) {
           size = "0px";
         } else {
           size = "240px";

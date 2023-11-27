@@ -9,113 +9,101 @@
   import Frq from "./FRQ.svelte";
 
   let scrollContainer: HTMLDivElement;
+  let indexActive: number = 0;
 
   let qs = [
-    { question: "What is your name" },
-    { question: "Name what is your" },
-    { question: "Is your name what" },
-    { question: "Lorem ipsum dolor sit" },
-    { question: "Blah Bla Blah Blah" },
+    { question: "What is your full name?" },
+    { question: "What's a good email address?" },
+    { question: "What high school did you attend?"},
+    { question: "How much programming experience do you have?"},
+    { question: "Calendly"},
+    { question: "How did you hear about us?"},
+    { question: "Any other questions?"},
   ];
 
   function moveRight() {
-    const firstElement = qs.shift();
-    //@ts-ignore
-    qs.push(firstElement);
+    if (indexActive === qs.length - 1) {
+      return;
+    }
 
-    let mainContainerTimeline = gsap.timeline();
+    indexActive += 1;
 
-    mainContainerTimeline.from(".frq-container", {
-      opacity: 0,
-      duration: 0.3,
-      x: -20,
+    gsap.to("#frq-container", {
+      marginLeft: "+=25%",
+      duration: 0.5,
     });
   }
 
   function moveLeft() {
-    const lastElement = qs.pop();
-    //@ts-ignore
-    qs.unshift(lastElement);
-
-    let mainContainerTimeline = gsap.timeline();
-
-    mainContainerTimeline.from(".frq-container", {
-      opacity: 0,
-      duration: 0.3,
-      x: 20,
-    });
-  }
-
-  let lastInvocation = 0;
-  const debounceInterval = 300; // 200 ms
-
-  function debounce(func: (event: WheelEvent) => void) {
-    return function (event: WheelEvent) {
-      const now = Date.now();
-      if (now - lastInvocation > debounceInterval) {
-        func(event);
-        lastInvocation = now;
-      }
-    };
-  }
-
-  function handleScroll(event: WheelEvent) {
-    console.log(event.deltaY);
-    if (event.deltaY > 0) {
-      moveRight();
-      console.log(qs);
-    } else if (event.deltaY < 0) {
-      moveLeft();
-      console.log(qs);
+    if (indexActive === 0) {
+      return;
     }
 
-    qs = qs;
-  }
+    indexActive -= 1;
+    const firstElement = qs.shift();
 
-  //test
-  let debouncedHandleScroll = debounce(handleScroll);
+    gsap.to("#frq-container", {
+      marginLeft: "-=25%",
+      duration: 0.5,
+    });
+
+  }
 </script>
 
-<main on:wheel={debouncedHandleScroll}>
+<main>
   <Background />
   <Blob />
   <Blur />
 
   <!-- svelte-ignore a11y-click-events-have-key-events -->
   <!-- svelte-ignore a11y-no-static-element-interactions -->
-  <div class="applicationTitle" id="applicationTitle">Webinar Signup Form</div>
+  <div class="headings" id="applicationTitle">Webinar Signup Form</div>
 
-  <div bind:this={scrollContainer} class="frq-container">
+  <div id="frq-container" bind:this={scrollContainer} >
     {#each qs as q}
-      <Frq title={q.question} width={"500px"} />
+      <Frq title={q.question}/>
     {/each}
+  </div>
+
+  <div class="headings" id="navigation-buttons">
+    <button class="interactable" type="button" on:click={moveRight}>Back</button>
+    <button class="interactable" type="button" on:click={moveLeft}>Forward</button>
   </div>
 </main>
 
 <style>
-  .frq-container {
+  button {
+    margin-top: 2%;
+    margin-right: 1%;
+    border-radius: 32px;
+    padding: 20px;
+    font-size: 16px;
+    background-color: #5e6ad2;
+    border: none;
+    color: white;
+    width: 10%;
+    display: inline-block;
+    z-index: 4000000;
+  }
+  button:hover {
+    cursor: pointer;
+    background-color: #7881d3;
+  }
+  #navigation-buttons {
+    text-align: center;
+  }
+
+  #frq-container {
     display: flex;
     width: 200%;
     overflow-x: scroll; /* Enables horizontal scrolling */
     white-space: nowrap; /* Prevents items from wrapping to the next line */
-    gap: 10px; /* Optional: Adds space between items */
-    padding: 10px; /* Adjust as needed */
-    opacity: 100%;
-  }
-
-  /* This ensures each Frq component has a fixed width and does not overlap */
-
-  .applicationTitle {
-    text-shadow: rgb(190, 190, 190) 1px 0 10px;
-    position: relative;
-    font-size: 54px;
-    font-weight: bold;
-    text-align: left;
-    margin: 50px;
+    gap: 40px; /* Optional: Adds space between items */
+    margin: 0px 20px;
+    margin-left: 35%;
   }
 
   #applicationTitle {
     font-size: 84px;
-    font-weight: bold;
   }
 </style>

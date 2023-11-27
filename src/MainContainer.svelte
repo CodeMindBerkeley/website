@@ -29,8 +29,7 @@
     </div>
     <button
       on:click={navigateToNewPage}
-      id="interactable"
-      class="button button2">Start Here</button
+      class="interactable button button2">Start Here</button
     >
   </section>
 </main>

@@ -65,29 +65,29 @@
 
         {#if activeIndex === index}
           <div
-            id="interactableNowOpened"
-            class="accordion-item"
+            id="NowOpened"
+            class="interactable accordion-item"
             style="height: {containerHeight}px"
             on:click={() => toggleItem(index)}
           >
-            <div id="interactable" class="titleLine">
-              <div id="interactable" class="title">{item.title}</div>
+            <div class="interactable titleLine">
+              <div class="interactable title">{item.title}</div>
               <div class="expand">
-                <Fa id="interactable" icon={faChevronLeft} />
+                <Fa class="interactable" icon={faChevronLeft} />
               </div>
             </div>
-            <div id="interactable" class="content">{item.content}</div>
+            <div class="content interactable">{item.content}</div>
           </div>
         {:else if activeIndex === null}
           <div
-            id="interactableNowOpened"
+            id="NowOpened"
             class="accordion-item"
             on:click={() => toggleItem(index)}
           >
-            <div id="interactable" class="titleLine">
-              <div id="interactable" class="title">{item.title}</div>
+            <div class="interactable titleLine">
+              <div class="interactable title">{item.title}</div>
               <div class="expand">
-                <Fa id="interactable" icon={faChevronRight} />
+                <Fa class="interactable" icon={faChevronRight} />
               </div>
             </div>
           </div>
