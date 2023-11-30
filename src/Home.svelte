@@ -9,10 +9,9 @@
   import Description from "./Description.svelte";
   import About from "./About.svelte";
   import Modal from "./Modal.svelte";
-  import FAQ from "./FAQ.svelte";
   import { accumulatedDeltaYScroll, currentIndex } from "./main";
 
-  let comp = [MainContainer, MissionContainer, Description, About, FAQ];
+  let comp = [MainContainer, MissionContainer, Description, About];
   let mobile: boolean = window.innerWidth <= 800;
 
 
@@ -46,7 +45,7 @@
       $currentIndex = Math.max($currentIndex - 1, 0)
       accumulatedDeltaY = 0;
     }
-    $accumulatedDeltaYScroll = (100 / 4.09) * ($currentIndex + accumulatedDeltaY / 4.09);
+    $accumulatedDeltaYScroll = (100 / 3.69) * ($currentIndex + accumulatedDeltaY / 3.69);
   }
 </script>
 

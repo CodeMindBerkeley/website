@@ -135,7 +135,7 @@
     font-size: 36px;
     width: 65%;
     height: 30vh;
-    text-align: left;
+    text-align: center;
     margin-top: 2%;
     margin-left: auto;
     margin-right: auto;

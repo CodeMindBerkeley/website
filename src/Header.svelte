@@ -7,13 +7,12 @@
         "Mission": 1,
         "Timeline": 2,
         "Team": 3,
-        "FAQ": 4,
     }
     const handleClick = (e: Event) => {
         let target = e.target;
         // @ts-ignore
         $currentIndex = scrollAmount[target.id.split("-")[0]]; // this is giving errors... idk why but it works
-        $accumulatedDeltaYScroll = (100 / 4.09) * ($currentIndex);
+        $accumulatedDeltaYScroll = (100 / 3.09) * ($currentIndex); // 100 / 4.09
     }
 </script>
 

@@ -125,6 +125,7 @@
 
   .timeline-text {
     margin: auto;
+    text-align: center;
     font-family: "Montserrat", sans-serif;
     width: 27%;
     margin-top: 10px;
