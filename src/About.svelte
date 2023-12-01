@@ -8,6 +8,7 @@
   import GN from "./assets/img/GN.jpg";
   import AB from "./assets/img/AB.jpg";
   import BM from "./assets/img/BM.jpg";
+  import SR from "./assets/img/rao.jpeg";
   import SRA from "./assets/img/SRA.jpg";
   import JA from "./assets/img/JA.jpg";
   import JM from "./assets/img/JM.jpg";
@@ -31,20 +32,27 @@
     },
     {
       id: "1",
+      title: "Prof. Satish Rao",
+      status: "professor",
+      image: SR,
+      disc: "Satish B. Rao is a distinguished American computer scientist and a professor at the University of California, Berkeley. He completed his PhD at the Massachusetts Institute of Technology in 1989 and joined UC Berkeley in 1999. Renowned for his contributions in computational biology, graph partitioning, and the maximum flow problem, Rao's work significantly advances the field of computer science. He is an ACM Fellow (2013) and a recipient of the prestigious Fulkerson Prize (2012), alongside colleagues, for improving the approximation ratio for graph separators. With over 100 publications, Rao's influential research spans a variety of areas within computer science.",
+    },
+    {
+      id: "2",
       title: "Genesis Nguyen",
       status: "",
       image: GN,
       disc: "Leveraging my experience in biotechnology and chemical engineering at Stanford with infrastructure development, Notion, and Python to scale and optimize WCMM, West Coast Media Management, Code Mind Berkeley, & SubHub. \n \n CEO & Cofounder at CodeMind Berkeley \n \n CMO & Cofounder at SubHub \n \n CMO at WCMM \n \n ML/Scientific Researcher at the Cochran Lab, Stanford",
     },
     {
-      id: "2",
+      id: "3",
       title: "Andrew Boldi",
       status: "",
       image: AB,
       disc: "As Code Mind Berkeley's CTO, Andrew brings technical experience from synthetic organic chemistry, machine learning, computational organic chemistry, statistical physics, quantum mechanics, assembly language, and many others fields. Andrew has worked previously on the total synthesis of molecules at a Caltech chemistry lab and leveraged computational algorithms to accelerate scientific discovery. He's also taken the lead on several CS-based projects such as developing a novel search algorithm for scenic navigation and leveraging deep learning for predicting chemical properties. Andrew has also contributed to open-source computational chemistry libraries, self-driving car libraries, projects exploring the intersection of math, programming, and music, a 3D graphing engine, and an interactive physics simulation. Andrew was also a Program Director for a nonprofit organization for providing STEM workshops to elementary students and another tutoring program where he was a Math Co-Program Leader over 460+ students. In his free time, Andrew plays piano where he's performed at Carnegie Hall, performed at banquets with 400+ people, and won 1st place at multiple national competitions. Andrew is currently studying chemical engineering at UC Berkeley with a minor in Electrical Engineering & Computer Science.",
     },
     {
-      id: "3",
+      id: "4",
       title: "Blake Martin",
       status: "",
       image: BM,
@@ -117,9 +125,9 @@
     let member = members.find((member) =>
       `${event.currentTarget.id.toString()}`.includes(member.id)
     );
-    dispatch("displayModal", { 
+    dispatch("displayModal", {
       modalText: member?.disc,
-      modalName: member?.title 
+      modalName: member?.title,
     });
   }
 </script>
@@ -151,7 +159,7 @@
             <!-- svelte-ignore a11y-no-static-element-interactions -->
             <!-- svelte-ignore a11y-click-events-have-key-events -->
             <div
-              id="{member.id}"
+              id={member.id}
               class="gradientBorder"
               on:mousemove={handleTilt}
               on:mouseleave={resetTilt}
@@ -182,7 +190,7 @@
   }
   .team-bios {
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: auto auto auto;
     align-items: center;
     gap: 16px;
     max-width: 100%;
