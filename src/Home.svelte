@@ -9,9 +9,10 @@
   import Description from "./Description.svelte";
   import About from "./About.svelte";
   import Modal from "./Modal.svelte";
+  import Pay from "./Pay.svelte"
   import { accumulatedDeltaYScroll, currentIndex } from "./main";
 
-  let comp = [MainContainer, MissionContainer, Description, About];
+  let comp = [MainContainer, MissionContainer, Description, About, Pay];
   let mobile: boolean = window.innerWidth <= 800;
 
 
