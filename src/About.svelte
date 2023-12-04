@@ -8,7 +8,7 @@
   import GN from "./assets/img/GN.jpg";
   import AB from "./assets/img/AB.jpg";
   import BM from "./assets/img/BM.jpg";
-  import SR from "./assets/img/rao.jpeg";
+  import SR from "./assets/img/SR.jpg";
   import SRA from "./assets/img/SRA.jpg";
   import JA from "./assets/img/JA.jpg";
   import JM from "./assets/img/JM.jpg";
