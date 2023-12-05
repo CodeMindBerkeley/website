@@ -12,7 +12,7 @@
   import Pay from "./Pay.svelte"
   import { accumulatedDeltaYScroll, currentIndex } from "./main";
 
-  let comp = [MainContainer, MissionContainer, Description, About, Pay];
+  let comp = [MainContainer, MissionContainer, Description, About];
   let mobile: boolean = window.innerWidth <= 800;
 
 
