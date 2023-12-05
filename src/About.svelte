@@ -26,35 +26,35 @@
     {
       id: "0",
       title: "Prof. Mohamad Hallal",
-      status: "professor",
+      status: "Professor",
       image: MH,
       disc: "Mohamad Hallal is an Assistant Teaching Professor of Civil and Environmental Engineering at UC Berkeley specializing in data science and computation in the context of civil and environmental engineering. As the civil and environmental engineering field undergoes a revolution fueled by the proliferation of data, Hallal aims to equip rising civil and environmental engineers with state-of-the-art data science and computation skills to address the most significant societal-scale challenges. \n \n As a geotechnical engineering researcher and geostatistics enthusiast, Hallal's research focuses on integrating multidisciplinary tools to develop holistic methods spanning subsurface imaging and applications in natural hazards engineering with high societal impact.",
     },
     {
       id: "1",
       title: "Prof. Satish Rao",
-      status: "professor",
+      status: "Advisor",
       image: SR,
       disc: "Satish B. Rao is a distinguished American computer scientist and a professor at the University of California, Berkeley. He completed his PhD at the Massachusetts Institute of Technology in 1989 and joined UC Berkeley in 1999. Renowned for his contributions in computational biology, graph partitioning, and the maximum flow problem, Rao's work significantly advances the field of computer science. He is an ACM Fellow (2013) and a recipient of the prestigious Fulkerson Prize (2012), alongside colleagues, for improving the approximation ratio for graph separators. With over 100 publications, Rao's influential research spans a variety of areas within computer science.",
     },
     {
       id: "2",
       title: "Genesis Nguyen",
-      status: "",
+      status: "CEO",
       image: GN,
       disc: "Leveraging my experience in biotechnology and chemical engineering at Stanford with infrastructure development, Notion, and Python to scale and optimize WCMM, West Coast Media Management, Code Mind Berkeley, & SubHub. \n \n CEO & Cofounder at CodeMind Berkeley \n \n CMO & Cofounder at SubHub \n \n CMO at WCMM \n \n ML/Scientific Researcher at the Cochran Lab, Stanford",
     },
     {
       id: "3",
       title: "Andrew Boldi",
-      status: "",
+      status: "CTO",
       image: AB,
       disc: "As Code Mind Berkeley's CTO, Andrew brings technical experience from synthetic organic chemistry, machine learning, computational organic chemistry, statistical physics, quantum mechanics, assembly language, and many others fields. Andrew has worked previously on the total synthesis of molecules at a Caltech chemistry lab and leveraged computational algorithms to accelerate scientific discovery. He's also taken the lead on several CS-based projects such as developing a novel search algorithm for scenic navigation and leveraging deep learning for predicting chemical properties. Andrew has also contributed to open-source computational chemistry libraries, self-driving car libraries, projects exploring the intersection of math, programming, and music, a 3D graphing engine, and an interactive physics simulation. Andrew was also a Program Director for a nonprofit organization for providing STEM workshops to elementary students and another tutoring program where he was a Math Co-Program Leader over 460+ students. In his free time, Andrew plays piano where he's performed at Carnegie Hall, performed at banquets with 400+ people, and won 1st place at multiple national competitions. Andrew is currently studying chemical engineering at UC Berkeley with a minor in Electrical Engineering & Computer Science.",
     },
     {
       id: "4",
       title: "Blake Martin",
-      status: "",
+      status: "CMO",
       image: BM,
       disc: "CEO & Cofounder at SubHub \n \n CEO & CoFounder at WCMM \n \n CEO & Founder at FinoVino \n \n Marin County, California \n \n I became obsessed at a young age within the R&D marketing world. Curiosity has always been the fuel to my fire of testing new methods and measuring alternative strategies with KPI's. \n \n Approaching a decade of experience in sales and marketing, I have honed my skills in lead generation, customer acquisition, and retention strategies. I specialize in helping businesses increase their online presence, drive traffic to their websites, and convert leads into customers.",
     },
@@ -127,7 +127,7 @@
     );
     dispatch("displayModal", {
       modalText: member?.disc,
-      modalName: member?.title,
+      modalName: `${member?.title} - ${member?.status}`,
     });
   }
 </script>
