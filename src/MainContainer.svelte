@@ -4,6 +4,7 @@
   import { gsap } from "gsap";
   // @ts-ignore
   import { navigate } from "svelte-routing";
+  import Thumbnail from "./assets/img/Code Mind VSL Thumbnail.png";
 
   function navigateToNewPage() {
     window.open("https://calendly.com/nguyengenesis10/berkeley-students-mentorship-program-webinar", "_blank")
@@ -20,6 +21,18 @@
     });
   });
 
+  function playVideo(e: any) {
+    e.target.nextElementSibling.style.display="block";
+    e.target.style.display = "none";
+
+    // var ifrm = document.createElement("iframe");
+    // ifrm.id="iframeFORSURE"
+    // ifrm.setAttribute("src", "https://www.youtube.com/embed/Jvu1RjaY2VQ?autoplay=1");
+    // ifrm.title="Youtube video player";
+    // ifrm.setAttribute("class", "stuff");
+    // document.getElementById("iframeVideo")?.appendChild(ifrm);
+  }
+
   let mobile: boolean = window.innerWidth <= 800;
 </script>
 
@@ -31,7 +44,10 @@
     </div>
     
     <div class="VSL">
-      <iframe src="https://www.youtube.com/embed/Jvu1RjaY2VQ?si=JkTuw4FMLFz1pwQl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <div class="stuff" id="thumbnailPreview" on:click={playVideo}></div>
+
+        <!-- <img class="stuff" alt="Thumbnail for Code Mind Berkeley Introduction video" src="{Thumbnail}" style="cursor:pointer" /> -->
+      <iframe style="display: none;" class="stuff" src="https://www.youtube.com/embed/Jvu1RjaY2VQ?autoplay=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
 
     <div>
@@ -45,18 +61,23 @@
 </main>
 
 <style>
+  #thumbnailPreview {
+    background-image: url("./assets/img/Code Mind VSL Thumbnail.png");
+    background-size: cover;
+    cursor: pointer;
+  }
   #main-container {
     position: absolute;
-    top: 10%;
+    top: 15%;
     left: 0;
   }
-  iframe {
+  .stuff {
     /* width: min(80vw, 500px); */
     height: 20vh;
     aspect-ratio: 16 / 9;
     border-radius: 1vw;
     z-index: 312423;
-    margin-bottom: 1vh;
+    margin: max(1vw, 2vh) auto 1vh auto;
   }
   button {
     background-color: rgb(56, 54, 54);
@@ -68,6 +89,7 @@
     display: inline-block;
     font-size: max(1vw, 2vh);
     margin: max(0.3vw, 0.6vh);
+    margin-top: max(1vw, 2vh) !important;
     cursor: pointer;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
