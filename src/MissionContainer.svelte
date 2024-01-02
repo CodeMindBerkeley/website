@@ -21,12 +21,23 @@
     <div id="mission-title">
       Empowering the next generation of visionaries with cutting-edge research programs.
     </div>
+  <div>
+    <iframe title="CodeMindBerkeley Video Sales Letter"
+      src="https://youtube.com/embed/Jvu1RjaY2VQ">
+    </iframe>
+  </div>
   </section>
 </main>
 
 <style>
+  iframe {
+    width: 50vw;
+    height: 50vh;
+    margin: 5%;
+    border-radius: 20px;
+  }
   #mission-container {
-    top: 25%;
+    top: 5%;
     position: absolute;
     left: 0;
     z-index: 4000;
