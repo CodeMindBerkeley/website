@@ -106,7 +106,7 @@
     z-index: 500000;
     background-color: white;
     color: white;
-    height: 2px;
+    height: 0.3vh;
     top: 0;
     left: 0;
     min-width: 5px !important;

@@ -33,23 +33,23 @@
         overflow: hidden;
         position: absolute;
         z-index: 2934123;
-        height: 30px;
+        height: 3vh;
         min-width: 25%;
         left: 50%;
         transform: translateX(-50%);
         display: flex;
         justify-content: space-evenly;
         align-items: center;
-        padding: 10px;
+        padding: max(0.5vw, 1vh);
 
         button {
             padding: 0;
             margin: 0;
             background-color: transparent;
-            padding: 10px 20px;
-            border-radius: 12px;
+            padding: max(0.4vw, 0.8vh) max(0.8vw, 1.6vh);
+            border-radius: 0.5vw;
             transition: all 222ms ease;
-            font-size: 1.2rem;
+            font-size: max(0.8vw, 1.6vh);
 
             &:hover {
                 background: rgba(255, 255, 255, 0.1);

@@ -30,9 +30,11 @@
       Interdisciplinary CS research with UC Berkeley Professors and Students
     </div>
     
-    <iframe src="https://www.youtube.com/embed/Jvu1RjaY2VQ?si=JkTuw4FMLFz1pwQl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <div class="VSL">
+      <iframe src="https://www.youtube.com/embed/Jvu1RjaY2VQ?si=JkTuw4FMLFz1pwQl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
 
-    <div style="margin-top: 10%;">
+    <div>
       <button
         on:click={navigateToNewPage}
         class="interactable button button2">Start Here</button
@@ -43,23 +45,29 @@
 </main>
 
 <style>
+  #main-container {
+    position: absolute;
+    top: 10%;
+    left: 0;
+  }
   iframe {
-    margin-top: 5%;
-    width: min(80vw, 500px);
+    /* width: min(80vw, 500px); */
+    height: 20vh;
     aspect-ratio: 16 / 9;
-    border-radius: 20px;
+    border-radius: 1vw;
     z-index: 312423;
+    margin-bottom: 1vh;
   }
   button {
     background-color: rgb(56, 54, 54);
     border: none;
     color: white;
-    padding: 20px 40px;
+    padding: max(1vw, 2vh) max(2vw, 4vh);
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 18px;
-    margin: 4px 2px;
+    font-size: max(1vw, 2vh);
+    margin: max(0.3vw, 0.6vh);
     cursor: pointer;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
