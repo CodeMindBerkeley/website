@@ -45,7 +45,7 @@
 <style>
   iframe {
     margin-top: 5%;
-    width: min(80vw, 1200px);
+    width: min(80vw, 500px);
     aspect-ratio: 16 / 9;
     border-radius: 20px;
     z-index: 312423;
