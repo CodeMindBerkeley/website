@@ -89,7 +89,7 @@
     display: inline-block;
     font-size: max(1vw, 2vh);
     margin: max(0.3vw, 0.6vh);
-    margin-top: max(1vw, 2vh) !important;
+    margin-top: max(2vw, 4vh) !important;
     cursor: pointer;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
