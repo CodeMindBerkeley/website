@@ -27,14 +27,27 @@
     <div id="h2">
       Interdisciplinary CS research with UC Berkeley Professors and Students
     </div>
+    <div>
+      <iframe title="CodeMindBerkeley Video Sales Letter"
+        src="https://youtube.com/embed/Jvu1RjaY2VQ">
+      </iframe>
+    </div>
     <button
       on:click={navigateToNewPage}
       class="interactable button button2">Start Here</button
     >
   </section>
+
 </main>
 
 <style>
+  iframe {
+    width: 50vw;
+    height: 50vh;
+    margin: 5%;
+    border-radius: 20px;
+    z-index: 312423;
+  }
   .button {
     background-color: rgb(56, 54, 54);
     border: none;
