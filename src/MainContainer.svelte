@@ -19,6 +19,8 @@
       y: -20,
     });
   });
+
+  let mobile: boolean = window.innerWidth <= 800;
 </script>
 
 <main>
@@ -28,7 +30,7 @@
       Interdisciplinary CS research with UC Berkeley Professors and Students
     </div>
     
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/Jvu1RjaY2VQ?si=JkTuw4FMLFz1pwQl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/Jvu1RjaY2VQ?si=JkTuw4FMLFz1pwQl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
     <div style="margin-top: 10%;">
       <button
@@ -43,8 +45,8 @@
 <style>
   iframe {
     margin-top: 5%;
-    width: 33vw;
-    height: 33vh;
+    width: min(80vw, 1200px);
+    aspect-ratio: 16 / 9;
     border-radius: 20px;
     z-index: 312423;
   }
