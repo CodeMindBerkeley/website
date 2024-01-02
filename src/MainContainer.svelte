@@ -27,43 +27,43 @@
     <div id="h2">
       Interdisciplinary CS research with UC Berkeley Professors and Students
     </div>
-    <div>
-      <iframe title="CodeMindBerkeley Video Sales Letter"
-        src="https://youtube.com/embed/Jvu1RjaY2VQ">
-      </iframe>
+    
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/Jvu1RjaY2VQ?si=JkTuw4FMLFz1pwQl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+    <div style="margin-top: 10%;">
+      <button
+        on:click={navigateToNewPage}
+        class="interactable button button2">Start Here</button
+      >
     </div>
-    <button
-      on:click={navigateToNewPage}
-      class="interactable button button2">Start Here</button
-    >
   </section>
 
 </main>
 
 <style>
   iframe {
-    width: 50vw;
-    height: 50vh;
-    margin: 5%;
+    margin-top: 5%;
+    width: 33vw;
+    height: 33vh;
     border-radius: 20px;
     z-index: 312423;
   }
-  .button {
+  button {
     background-color: rgb(56, 54, 54);
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 20px 40px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
+    font-size: 18px;
     margin: 4px 2px;
     cursor: pointer;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
   }
 
-  .button:hover {
+  button:hover {
     background-color: white;
     background: linear-gradient(to right, aquamarine, mediumpurple);
     color: rgb(56, 54, 54);
