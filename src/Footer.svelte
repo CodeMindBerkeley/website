@@ -48,13 +48,11 @@
 
 <style>
   #footer {
-    position: absolute;
     text-align: center;
     height: 3vh;
     font-size: max(1vw, 2vh);
-    z-index: 4000;
+    z-index: 0;
     padding-bottom: max(0.3vw, 0.6vh);
-    position: fixed;
     bottom: 0;
     width: 100%;
     color: white;

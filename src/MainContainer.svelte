@@ -4,7 +4,6 @@
   import { gsap } from "gsap";
   // @ts-ignore
   import { navigate } from "svelte-routing";
-  import Thumbnail from "./assets/img/Code Mind VSL Thumbnail.png";
 
   function navigateToNewPage() {
     window.open("https://calendly.com/nguyengenesis10/berkeley-students-mentorship-program-webinar", "_blank")
@@ -24,16 +23,9 @@
   function playVideo(e: any) {
     e.target.nextElementSibling.style.display="block";
     e.target.style.display = "none";
-
-    // var ifrm = document.createElement("iframe");
-    // ifrm.id="iframeFORSURE"
-    // ifrm.setAttribute("src", "https://www.youtube.com/embed/Jvu1RjaY2VQ?autoplay=1");
-    // ifrm.title="Youtube video player";
-    // ifrm.setAttribute("class", "stuff");
-    // document.getElementById("iframeVideo")?.appendChild(ifrm);
   }
 
-  let mobile: boolean = window.innerWidth <= 800;
+  let mobile: boolean = window.innerWidth <= 800; // TODO: make it more generable. i.e. it doesn't work at 200% zoom
 </script>
 
 <main>
@@ -46,7 +38,6 @@
     <div class="VSL">
       <div class="stuff" id="thumbnailPreview" on:click={playVideo}></div>
 
-        <!-- <img class="stuff" alt="Thumbnail for Code Mind Berkeley Introduction video" src="{Thumbnail}" style="cursor:pointer" /> -->
       <iframe style="display: none;" class="stuff" src="https://www.youtube.com/embed/Jvu1RjaY2VQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </div>
 
@@ -72,7 +63,6 @@
     left: 0;
   }
   .stuff {
-    /* width: min(80vw, 500px); */
     height: 20vh;
     aspect-ratio: 16 / 9;
     border-radius: 1vw;

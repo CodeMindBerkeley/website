@@ -81,12 +81,13 @@
     backdrop-filter: blur(1vmax);
   }
   .modal {
+    /* basically we need to reposition this to show up on screen */
     margin-top: 5% !important;
     padding: 100px;
     max-width: 60%;
     margin: 10% auto;
     text-align: left;
-    background: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0);
     border: solid white;
     border-radius: 50px;
     border-width: 1px;
@@ -107,7 +108,7 @@
     border-radius: 25px;
     transition: all 300ms ease;
     &:hover {
-      background: rgba(255, 255, 255, 0.1);
+      background-color: rgba(255, 255, 255, 0.1);
       cursor: pointer;
     }
   }

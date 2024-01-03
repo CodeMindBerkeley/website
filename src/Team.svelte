@@ -3,7 +3,6 @@
   // @ts-ignore
   import { gsap } from "gsap";
   import { createEventDispatcher } from "svelte";
-  import Sidescroll from "../trash/Sidescroll.svelte";
   import MH from "./assets/img/MH.jpg";
   import GN from "./assets/img/GN.jpg";
   import AB from "./assets/img/AB.jpg";
@@ -119,8 +118,8 @@
     card.style.transform = "rotateX(0deg) rotateY(0deg)";
   }
 
-  //@ts-ignore
-  function spawnModal(event) {
+  // @ts-ignore
+  function spawnModal(event: MouseEvent) {
     console.log(event.currentTarget);
     let member = members.find((member) =>
       `${event.currentTarget.id.toString()}`.includes(member.id)
@@ -135,47 +134,26 @@
 <main>
   <div id="team-title" class="headings">Meet the Team</div>
   <section id="about-container">
-    <Sidescroll
-      {members}
-      {rows}
-      {columns}
-      on:pageItems={(e) => {
-        console.log(e.detail.calcPages);
-        modulatedMembers = e.detail.calcPages;
-        let direction = e.detail.direction;
-
-        //left or right depending on if pressed right or left
-        let mainContainerTimeline = gsap.timeline();
-        mainContainerTimeline.from("#team-container", {
-          opacity: 0,
-          duration: 1,
-          x: direction,
-        });
-      }}
-    >
-      <section class="team-container" id="team-container">
-        <div class="team-bios" id="team-bios">
-          {#each modulatedMembers as member}
-            <!-- svelte-ignore a11y-no-static-element-interactions -->
-            <!-- svelte-ignore a11y-click-events-have-key-events -->
+      <div class="team-bios" id="team-bios">
+        {#each modulatedMembers as member}
+          <!-- svelte-ignore a11y-no-static-element-interactions -->
+          <!-- svelte-ignore a11y-click-events-have-key-events -->
+          <div
+            id={member.id}
+            class="gradientBorder"
+            on:mousemove={handleTilt}
+            on:mouseleave={resetTilt}
+            on:click={spawnModal}
+          >
             <div
-              id={member.id}
-              class="gradientBorder"
-              on:mousemove={handleTilt}
-              on:mouseleave={resetTilt}
-              on:click={spawnModal}
+              class="card {member.status} interactable"
+              style="background-image: url({member.image});"
             >
-              <div
-                class="card {member.status} interactable"
-                style="background-image: url({member.image});"
-              >
-                <h6>{member.title}</h6>
-              </div>
+              <h6>{member.title}</h6>
             </div>
-          {/each}
-        </div>
-      </section>
-    </Sidescroll>
+          </div>
+        {/each}
+      </div>
   </section>
 </main>
 
@@ -184,10 +162,7 @@
     height: auto;
     margin: 0;
     padding: 0;
-  }
-  #team-title {
-    padding-top: calc(50% - 3rem);
-    margin-bottom: 0;
+    width: 60%;
   }
   .team-bios {
     display: grid;

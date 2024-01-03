@@ -7,66 +7,49 @@
   import MainContainer from "./MainContainer.svelte";
   import MissionContainer from "./MissionContainer.svelte";
   import Description from "./Description.svelte";
-  import About from "./About.svelte";
+  import Team from "./Team.svelte";
   import Modal from "./Modal.svelte";
   import Pay from "./Pay.svelte"
   import { accumulatedDeltaYScroll, currentIndex } from "./main";
 
-  let comp = [MainContainer, MissionContainer, Description, About];
-  let mobile: boolean = window.innerWidth <= 800;
-
-
+  let comp = [MainContainer, MissionContainer, Description, Team];
 
   let showModal = false;
   let modalText = "";
   let modalName = "";
-
-  let threshold = 4; // Set a threshold for scroll sensitivity
-  let accumulatedDeltaY = 0;
-
-  let lastInvocation = 0;
-  const debounceInterval = 50;
-
-  function handleScroll(event: WheelEvent) {
-    const now = Date.now();
-    if (now - lastInvocation < debounceInterval) {
-      return; // Skip this invocation because it's too soon
-    }
-    lastInvocation = now;
-
-    let change = Math.sign(event.deltaY);
-    accumulatedDeltaY += change;
-
-    if (accumulatedDeltaY > threshold) {
-      // Scrolling down
-      $currentIndex = Math.min($currentIndex + 1, comp.length - 1)
-      accumulatedDeltaY = 0;
-    } else if (accumulatedDeltaY < -threshold) {
-      // Scrolling up
-      $currentIndex = Math.max($currentIndex - 1, 0)
-      accumulatedDeltaY = 0;
-    }
-    $accumulatedDeltaYScroll = (100 / 3.69) * ($currentIndex + accumulatedDeltaY / 3.69);
-  }
 </script>
 
 <main>
-    {#if !mobile}
-      <div id="progress" style="width: {$accumulatedDeltaYScroll}%;"></div>
-      <Header />
-      <div id="scrollHandler" on:wheel={handleScroll}>
-      <Background />
-      <Blob />
-      <Blur />
+    <!-- <div id="progress" style="width: {$accumulatedDeltaYScroll}%;"></div> -->
+    <!-- <Header /> -->
+    <section id="body-container">
 
-      <svelte:component
-        this={comp[$currentIndex]}
-        on:displayModal={(e) => {
-          showModal = true;
-          modalText = e.detail.modalText;
-          modalName = e.detail.modalName;
-        }}
-      />
+      <div id="Background">
+        <Background />
+      </div>
+
+      <div id="Blob">
+        <Blob />
+      </div>
+
+      <div id="Blur">
+        <Blur />
+      </div>
+
+      {#each comp as c, i}
+        <div class="component" id="component-{i}">
+          <svelte:component
+            this={c}
+            on:displayModal={(e) => {
+              showModal = true;
+              modalText = e.detail.modalText;
+              modalName = e.detail.modalName;
+            }}
+          />
+        </div>
+        {i+1}
+      {/each} 
+
       {#if showModal}
         <Modal
           {modalText}
@@ -76,32 +59,27 @@
           }}
         />
       {/if}
-    </div>
 
-    {#if $currentIndex == comp.length - 1}
-      <Footer />
-    {/if}
-  {:else}
-      <Background />
-      <MainContainer />
+      <div id="Footer">
+        <Footer />
+      </div>
 
-  {/if}
+    </section>
 </main>
 
 <style>
-  #scrollHandler {
-    margin: 0;
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-    left: 0; /* Align the left edge of the element with the viewport */
-    right: 0; /* Stretch the element to the right edge of the viewport */
-    bottom: 0; /* Stretch the element to the bottom edge of the viewport */
-    display: flex; /* Enable flexbox layout */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+  #body-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
   }
-  #progress {
+  .component {
+    min-height: 100vh;
+  }
+  #Footer {
+    min-height: 10vh;
+  }
+  /* #progress {
     position: fixed;
     z-index: 500000;
     background-color: white;
@@ -114,5 +92,5 @@
     overflow-y: hidden;
     border-radius: 0.3vh;
     transition: width 300ms ease;
-  }
+  } */
 </style>

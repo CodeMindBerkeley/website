@@ -26,7 +26,6 @@
 
 <style>
   #mission-container {
-    top: 25%;
     position: absolute;
     left: 0;
     z-index: 4000;
