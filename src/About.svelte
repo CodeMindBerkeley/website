@@ -3,7 +3,7 @@
   // @ts-ignore
   import { gsap } from "gsap";
   import { createEventDispatcher } from "svelte";
-  import Sidescroll from "./Sidescroll.svelte";
+  import Sidescroll from "../trash/Sidescroll.svelte";
   import MH from "./assets/img/MH.jpg";
   import GN from "./assets/img/GN.jpg";
   import AB from "./assets/img/AB.jpg";

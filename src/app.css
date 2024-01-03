@@ -1,17 +1,7 @@
 /* Fonts */
 html * {
-  font-family: "SFUI" !important;
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
   overflow-x: hidden;
-}
-@font-face {
-  font-family: "SFUI";
-  src: url('assets/fonts/SF-Pro-Display-Medium.otf') format('opentype');
-  font-weight: normal;
-}
-@font-face {
-  font-family: "SFUI";
-  src: url('assets/fonts/SF-Pro-Display-Bold.otf') format('opentype');
-  font-weight: bold;
 }
 
 /* Scrollbar */
@@ -76,8 +66,8 @@ body {
   position: relative;
   font-size: max(3vw, 6vh);
   font-weight: bold;
-  margin: 50px;
-  padding: 10px;
+  margin: max(3vw, 6vh);
+  padding: max(1vw, 2vh);
 }
 section {
   width: 100%;
@@ -87,50 +77,23 @@ section {
   height: 20vh !important;
 }
 button {
-  margin-top: 24px;
-  border-radius: 48px;
-  padding: 16px 72px;
-  font-size: 24px;
-  /* font-weight: bold; */
-  background-color: #6873d4;
+  border-radius: max(4vw, 8vh);
   border: none;
   color: white;
 }
 button:hover {
   cursor: pointer;
-  background-color: #7881d3;
 }
-
-@keyframes rotate {
-from {
-  rotate: 0deg;
-}
-
-50% {
-  scale: 1 1.5;
-}
-
-to {
-  rotate: 360deg;
-}
-}
-/* #X {
-font-family: "Arial" !important;
-font-size: 72px;
-text-shadow: rgb(255, 255, 255) 1px 0 20px, rgb(255, 255, 255) 1px 0 40px, rgb(255, 255, 255) 1px 0 60px;
-} */
-
-
 
 #modal-blur {
-opacity: 0;
-position: fixed;
-left: 0;
-top: 0;
-height: 100%;
-width: 100%;
-z-index: -200;
-backdrop-filter: blur(0.5vmax);
+  opacity: 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: -200;
+  backdrop-filter: blur(0.5vmax);
 }
 
 @media (pointer:none), (pointer:coarse) {
@@ -145,24 +108,26 @@ backdrop-filter: blur(0.5vmax);
 span {
   width: auto;
 }
+
 a {
-color: white;
-text-decoration: none;
-transition: background-color 0.3s ease;
-position: relative;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  position: relative;
 }
+
 /* link animation */
 a::after {
-content: '';
-transform: scaleX(0);
-transform-origin: right;
-width: 100% !important;
-height: 2px;
-left: 0;
-background: currentColor;
-transition: ease 0.5s;
-position: absolute;
-bottom: 0;
+  content: '';
+  transform: scaleX(0);
+  transform-origin: right;
+  width: 100% !important;
+  height: 2px;
+  left: 0;
+  background: currentColor;
+  transition: ease 0.5s;
+  position: absolute;
+  bottom: 0;
 }
 a:hover::after,
 a:focus::after {
@@ -170,10 +135,3 @@ a:focus::after {
   transform-origin: left;
 }
 /* end link animation */
-
-.arrow-icon {
-  color: white;
-}
-.arrow-icon:hover {
-  color: #9a9ce9;
-}
