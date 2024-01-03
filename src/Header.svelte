@@ -35,12 +35,13 @@
         z-index: 2934123;
         height: 3vh;
         min-width: 25%;
+        top: 0;
         left: 50%;
         transform: translateX(-50%);
         display: flex;
         justify-content: space-evenly;
         align-items: center;
-        padding: max(0.5vw, 1vh);
+        padding: max(0.5vw, 1vh) 0 max(0.5vw, 1vh) 0;
 
         button {
             padding: 0;

@@ -182,20 +182,21 @@
 <style lang="scss">
   #about-container {
     height: auto;
-    margin: auto;
+    margin: 0;
+    padding: 0;
   }
   #team-title {
-    margin-top: 50%;
+    padding-top: calc(50% - 3rem);
     margin-bottom: 0;
   }
   .team-bios {
     display: grid;
     grid-template-columns: auto auto auto;
     align-items: center;
-    gap: 16px;
+    gap: max(1vw, 2vh);
     max-width: 100%;
-    padding: 24px;
-    padding-bottom: 100px;
+    padding: max(2vw, 4vh);
+    padding-bottom: max(5vw, 10vh);
     perspective: 2000px;
   }
 
@@ -210,17 +211,17 @@
   }
 
   .card {
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
+    background-color: #ffffff1a;
+    border-radius: max(1vw, 2vh);
     cursor: pointer;
     display: flex;
     flex-direction: column;
     position: relative;
-    width: 300px;
+    width: max(15vw, 30vh);
     aspect-ratio: 1 / 1;
     /* z-index: 200; */
     z-index: 400;
-    font-size: 24px;
+    font-size: max(1vw, 2vh) !important;
     transition: transform 0.3s; /* Smooth transition for the transform */
     transform-style: preserve-3d;
     background-size: cover;
@@ -228,13 +229,13 @@
   .gradientBorder {
     display: flex;
     align-items: center;
-    border-radius: 20px;
+    border-radius: max(1vw, 2vh);
     overflow: hidden;
-    padding: 6px;
+    padding: max(0.25vw, 0.5vh);
   }
 
   .gradientBorder:hover {
-    padding: 6px;
+    padding: max(0.25vw, 0.5vh);
     background: linear-gradient(to right, aquamarine, mediumpurple);
     transition: all 100ms ease;
   }
@@ -249,7 +250,7 @@
     margin-bottom: 0;
     width: 100%;
     align-items: center;
-    font-size: 28px;
+    font-size: max(1.5vw, 3vh);
     font-weight: bold;
     backdrop-filter: blur(0.1vmax);
   }

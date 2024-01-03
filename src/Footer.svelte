@@ -50,17 +50,16 @@
   #footer {
     position: absolute;
     text-align: center;
-    height: auto;
-    font-size: 1rem;
+    height: 3vh;
+    font-size: max(1vw, 2vh);
     z-index: 4000;
-    padding-bottom: 1%;
+    padding-bottom: max(0.3vw, 0.6vh);
     position: fixed;
     bottom: 0;
     width: 100%;
-    border-radius: 5vh;
     color: white;
   }
   #footer > span {
-    margin: 1rem;
+    margin: 0 max(1vw, 2vh) 0 max(1vw, 2vh);
   }
 </style>

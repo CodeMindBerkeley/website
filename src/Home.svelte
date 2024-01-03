@@ -109,10 +109,10 @@
     height: 0.3vh;
     top: 0;
     left: 0;
-    min-width: 5px !important;
-    width: 5px;
+    min-width: 0.3vh !important;
+    width: 0.3vh;
     overflow-y: hidden;
-    border-radius: 5px;
+    border-radius: 0.3vh;
     transition: width 300ms ease;
   }
 </style>

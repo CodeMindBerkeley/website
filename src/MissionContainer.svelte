@@ -17,7 +17,7 @@
 
 <main>
   <section id="mission-container">
-    <div class="headings">Our Mission</div>
+    <div id="our-mission" class="headings">Our Mission</div>
     <div id="mission-title">
       Empowering the next generation of visionaries with cutting-edge research programs.
     </div>
@@ -32,12 +32,19 @@
     z-index: 4000;
     width: 100%;
   }
+  #our-mission {
+    font-size: max(4vw, 8vh) !important;
+    padding: 0;
+    margin: 0;
+  }
   #mission-title {
     font-weight: bold;
-    font-size: 48px;
+    font-size: max(2.5vw, 5vh);
     z-index: 4000;
     padding-left: 20%;
     padding-right: 20%;
+    padding-top: max(2vw, 4vh);
+    padding-bottom: 0;
     text-align: center;
     background: linear-gradient(to right, #6873d4, #ffffff 80%);
     -webkit-text-fill-color: transparent;

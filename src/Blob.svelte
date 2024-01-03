@@ -38,8 +38,8 @@
 <style lang="scss">
   #blob {
     background-color: white;
-    height: 240px;
-    width: 240px;
+    height: max(10vw, 20vh) !important;
+    width: max(10vw, 20vh) !important;
     border-radius: 50%;
     position: absolute;
     left: 50%;

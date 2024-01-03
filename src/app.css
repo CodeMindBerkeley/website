@@ -72,9 +72,9 @@ body {
   background: linear-gradient(to right, #2c3263, #1b1b27 5%, #1b1b27 95%, #2c3263 100%);
 }
 .headings {
-  text-shadow: rgb(190, 190, 190) 1px 0 10px;
+  text-shadow: rgb(190, 190, 190) 1px 0 max(1vw, 2vh);
   position: relative;
-  font-size: 54px;
+  font-size: max(3vw, 6vh);
   font-weight: bold;
   margin: 50px;
   padding: 10px;
