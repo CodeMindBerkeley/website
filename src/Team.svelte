@@ -135,7 +135,7 @@
   <div id="team-title" class="headings">Meet the Team</div>
   <section id="about-container">
       <div class="team-bios" id="team-bios">
-        {#each modulatedMembers as member}
+        {#each members as member}
           <!-- svelte-ignore a11y-no-static-element-interactions -->
           <!-- svelte-ignore a11y-click-events-have-key-events -->
           <div
