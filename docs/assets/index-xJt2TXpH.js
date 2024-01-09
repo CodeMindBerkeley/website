@@ -27,7 +27,7 @@ var Zs=Object.defineProperty;var $s=(r,e,t)=>e in r?Zs(r,e,{enumerable:!0,config
  
  CMO at WCMM 
  
- ML/Scientific Researcher at the Cochran Lab, Stanford`},{id:"4",title:"Blake Martin",status:"CMO",image:$l,disc:`CEO & Cofounder at SubHub 
+ ML/Scientific Researcher at the Cochran Lab, Stanford`},{id:"3",title:"Blake Martin",status:"CMO",image:$l,disc:`CEO & Cofounder at SubHub 
  
  CEO & CoFounder at WCMM 
  
