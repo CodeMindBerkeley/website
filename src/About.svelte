@@ -44,13 +44,13 @@
       image: GN,
       disc: "Leveraging my experience in biotechnology and chemical engineering at Stanford with infrastructure development, Notion, and Python to scale and optimize WCMM, West Coast Media Management, Code Mind Berkeley, & SubHub. \n \n CEO & Cofounder at CodeMind Berkeley \n \n CMO & Cofounder at SubHub \n \n CMO at WCMM \n \n ML/Scientific Researcher at the Cochran Lab, Stanford",
     },
-    {
-      id: "3",
-      title: "Andrew Boldi",
-      status: "CTO",
-      image: AB,
-      disc: "As Code Mind Berkeley's CTO, Andrew brings technical experience from synthetic organic chemistry, machine learning, computational organic chemistry, statistical physics, quantum mechanics, assembly language, and many others fields. Andrew has worked previously on the total synthesis of molecules at a Caltech chemistry lab and leveraged computational algorithms to accelerate scientific discovery. He's also taken the lead on several CS-based projects such as developing a novel search algorithm for scenic navigation and leveraging deep learning for predicting chemical properties. Andrew has also contributed to open-source computational chemistry libraries, self-driving car libraries, projects exploring the intersection of math, programming, and music, a 3D graphing engine, and an interactive physics simulation. Andrew was also a Program Director for a nonprofit organization for providing STEM workshops to elementary students and another tutoring program where he was a Math Co-Program Leader over 460+ students. In his free time, Andrew plays piano where he's performed at Carnegie Hall, performed at banquets with 400+ people, and won 1st place at multiple national competitions. Andrew is currently studying chemical engineering at UC Berkeley with a minor in Electrical Engineering & Computer Science.",
-    },
+//    {
+//      id: "3",
+//      title: "Andrew Boldi",
+//      status: "CTO",
+//      image: AB,
+//      disc: "As Code Mind Berkeley's CTO, Andrew brings technical experience from synthetic organic chemistry, machine learning, computational organic chemistry, statistical physics, quantum mechanics, assembly language, and many others fields. Andrew has worked previously on the total synthesis of molecules at a Caltech chemistry lab and leveraged computational algorithms to accelerate scientific discovery. He's also taken the lead on several CS-based projects such as developing a novel search algorithm for scenic navigation and leveraging deep learning for predicting chemical properties. Andrew has also contributed to open-source computational chemistry libraries, self-driving car libraries, projects exploring the intersection of math, programming, and music, a 3D graphing engine, and an interactive physics simulation. Andrew was also a Program Director for a nonprofit organization for providing STEM workshops to elementary students and another tutoring program where he was a Math Co-Program Leader over 460+ students. In his free time, Andrew plays piano where he's performed at Carnegie Hall, performed at banquets with 400+ people, and won 1st place at multiple national competitions. Andrew is currently studying chemical engineering at UC Berkeley with a minor in Electrical Engineering & Computer Science.",
+//    },
     {
       id: "4",
       title: "Blake Martin",
