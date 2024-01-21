@@ -66,9 +66,9 @@
   <div class="modal" on:click|self={removeMyComponent} on:keyup>
     <div id="title" class="headings">{modalName}</div>
     <span id="x" on:click={removeMyComponent}>
-      <Fa icon={faClose}/>
+      <Fa icon={faClose} />
     </span>
-    <p id="h5">{modalText}</p>
+    <p id="myFont">{modalText}</p>
   </div>
 </div>
 
@@ -82,8 +82,9 @@
   }
   .modal {
     margin-top: 5% !important;
-    padding: 100px;
-    max-width: 60%;
+    padding: 10px;
+    max-width: 70%;
+    max-height: 90%;
     margin: 10% auto;
     text-align: left;
     background: rgba(0, 0, 0, 0);
@@ -92,7 +93,7 @@
     border-width: 1px;
   }
   p {
-    font-size: 28px !important;
+    font-size: max(2vw, 19px) !important;
     white-space: pre-line;
     text-align: justify !important;
     text-justify: inter-word !important;
