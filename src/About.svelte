@@ -3,7 +3,9 @@
   // @ts-ignore
   import { gsap } from "gsap";
   import { createEventDispatcher } from "svelte";
-  import Sidescroll from "../trash/Sidescroll.svelte";
+
+  import Sidescroll from "./Sidescroll.svelte";
+
   import MH from "./assets/img/MH.jpg";
   import GN from "./assets/img/GN.jpg";
   import AB from "./assets/img/AB.jpg";
@@ -16,8 +18,9 @@
 
   const dispatch = createEventDispatcher();
 
-  let rows = 2;
-  let columns = 4;
+  let w = 0;
+  $: rows = w < 340 ? 2 : 4;
+  $: columns = w < 340 ? 1 : 3;
 
   let modulatedMembers = [
     { id: "", title: "", status: "", image: "", disc: "" },
@@ -44,13 +47,6 @@
       image: GN,
       disc: "Leveraging my experience in biotechnology and chemical engineering at Stanford with infrastructure development, Notion, and Python to scale and optimize WCMM, West Coast Media Management, Code Mind Berkeley, & SubHub. \n \n CEO & Cofounder at CodeMind Berkeley \n \n CMO & Cofounder at SubHub \n \n CMO at WCMM \n \n ML/Scientific Researcher at the Cochran Lab, Stanford",
     },
-//    {
-//      id: "3",
-//      title: "Andrew Boldi",
-//      status: "CTO",
-//      image: AB,
-//      disc: "As Code Mind Berkeley's CTO, Andrew brings technical experience from synthetic organic chemistry, machine learning, computational organic chemistry, statistical physics, quantum mechanics, assembly language, and many others fields. Andrew has worked previously on the total synthesis of molecules at a Caltech chemistry lab and leveraged computational algorithms to accelerate scientific discovery. He's also taken the lead on several CS-based projects such as developing a novel search algorithm for scenic navigation and leveraging deep learning for predicting chemical properties. Andrew has also contributed to open-source computational chemistry libraries, self-driving car libraries, projects exploring the intersection of math, programming, and music, a 3D graphing engine, and an interactive physics simulation. Andrew was also a Program Director for a nonprofit organization for providing STEM workshops to elementary students and another tutoring program where he was a Math Co-Program Leader over 460+ students. In his free time, Andrew plays piano where he's performed at Carnegie Hall, performed at banquets with 400+ people, and won 1st place at multiple national competitions. Andrew is currently studying chemical engineering at UC Berkeley with a minor in Electrical Engineering & Computer Science.",
-//    },
     {
       id: "3",
       title: "Blake Martin",
@@ -58,34 +54,6 @@
       image: BM,
       disc: "CEO & Cofounder at SubHub \n \n CEO & CoFounder at WCMM \n \n CEO & Founder at FinoVino \n \n Marin County, California \n \n I became obsessed at a young age within the R&D marketing world. Curiosity has always been the fuel to my fire of testing new methods and measuring alternative strategies with KPI's. \n \n Approaching a decade of experience in sales and marketing, I have honed my skills in lead generation, customer acquisition, and retention strategies. I specialize in helping businesses increase their online presence, drive traffic to their websites, and convert leads into customers.",
     },
-    // {
-    //   id: "4",
-    //   title: "Syed Rayyan Ali",
-    //   status: "",
-    //   image: SRA,
-    //   disc: "As an environmental engineer, my path is defined by a deep-seated commitment to sustainability and technological innovation. My approach is analytical yet intuitive, leveraging the power of Python to unravel complex, data-driven environmental challenges. \n \n My enthusiasm for technology goes hand-in-hand with my love for personal interactions. I am a firm believer that the seeds of environmental change are sown through genuine, one-on-one conversations that spark collective action. This belief is the cornerstone of my focus on outreach, as I strive to bridge the gap between data-centric solutions and community-based initiatives.",
-    // },
-    // {
-    //   id: "5",
-    //   title: "Jude Alexis",
-    //   status: "",
-    //   image: JA,
-    //   disc: "I leverage my unique combination of professional clinical experience, heavy technical exposure, bioscience interests, and a passion for ensuring the human good, to push the bleeding edge of medical progress. I believe in using technology to solve the problems that plague the modern world. In his free time I enjoy reading and playing chess.",
-    // },
-    // {
-    //   id: "6",
-    //   title: "James Ma",
-    //   status: "",
-    //   image: JM,
-    //   disc: "I am majoring in Electrical Engineering and Computer Sciences, with a passion for artificial intelligence and hands-on computer science projects. My determination to master Python and C++ and my keen interest in using these languages to solve challenging problems have shaped my coding journey. I'm motivated by the potential of AI to transform industries and everyday life. As I navigate my academic and project-based endeavors, I welcome the collaborative spirit of innovation and the chance to learn from pioneers in the field.",
-    // },
-    // {
-    //   id: "7",
-    //   title: "Ronald Ji",
-    //   status: "",
-    //   image: RJ,
-    //   disc: "Maecenas pharetra convallis posuere morbi leo urna. Pharetra massa massa ultricies mi. Mattis enim ut tellus elementum sagittis vitae. Est lorem ipsum dolor sit amet consectetur. Volutpat maecenas volutpat blandit aliquam etiam. Malesuada fames ac turpis egestas integer eget aliquet. Amet venenatis urna cursus eget nunc scelerisque viverra. Sit amet risus nullam eget felis eget nunc lobortis.",
-    // },
   ];
 
   onMount(() => {
@@ -133,6 +101,8 @@
 </script>
 
 <main>
+  <div bind:clientWidth={w}></div>
+
   <div id="team-title" class="headings">Meet the Team</div>
   <section id="about-container">
     <Sidescroll
@@ -154,7 +124,13 @@
       }}
     >
       <section class="team-container" id="team-container">
-        <div class="team-bios" id="team-bios">
+        <div
+          class="team-bios"
+          id="team-bios"
+          style="grid-template-columns: {Array(columns)
+            .fill('auto')
+            .join(' ')};"
+        >
           {#each modulatedMembers as member}
             <!-- svelte-ignore a11y-no-static-element-interactions -->
             <!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -191,7 +167,6 @@
   }
   .team-bios {
     display: grid;
-    grid-template-columns: auto auto auto;
     align-items: center;
     gap: max(1vw, 2vh);
     max-width: 100%;

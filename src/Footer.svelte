@@ -17,36 +17,32 @@
 
 <main>
   <section id="footer">
-    <span>
-      <a id="copyright" aria-label="© Code Mind Berkeley 2023">
-        © Code Mind Berkeley 2023
-      </a>
-    </span>
-
-    <span>
-      <a
-        href="https://docs.google.com/forms/u/5/d/1INqjanGTz29xChcQt6mAYmcYK9gqiwaNrhbVbe-3jIk"
-        aria-label="Work with us"
-        target="_blank"
-      >
-        Careers
-      </a>
-    </span>
-
-    <span>
-      <a
-        href="https://codemindberkeley.com/Privacy Policy/v1.pdf"
-        aria-label="Code Mind Berkeley's Privacy Policy"
-        target="_blank"
-      >
-        Privacy Policy
-      </a>
-    </span>
-
+    <a id="copyright" aria-label="© Code Mind Berkeley 2023">
+      © Code Mind Berkeley 2023 &emsp;
+    </a>
+    <a
+      id="copyright"
+      href="https://docs.google.com/forms/u/5/d/1INqjanGTz29xChcQt6mAYmcYK9gqiwaNrhbVbe-3jIk"
+      aria-label="Work with us"
+      target="_blank"
+    >
+      Careers &emsp;
+    </a>
+    <a
+      id="copyright"
+      href="https://codemindberkeley.com/Privacy Policy/v1.pdf"
+      aria-label="Code Mind Berkeley's Privacy Policy"
+      target="_blank"
+    >
+      Privacy Policy
+    </a>
   </section>
 </main>
 
 <style>
+  #copyright {
+    font-size: max(1vw, 10px);
+  }
   #footer {
     position: absolute;
     text-align: center;

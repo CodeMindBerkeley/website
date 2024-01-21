@@ -9,13 +9,12 @@
   import Description from "./Description.svelte";
   import About from "./About.svelte";
   import Modal from "./Modal.svelte";
-  import Pay from "./Pay.svelte"
+  import Pay from "./Pay.svelte";
+  import { onMount, onDestroy } from "svelte";
   import { accumulatedDeltaYScroll, currentIndex } from "./main";
 
-  let comp = [MainContainer, MissionContainer, Description, About];
-  let mobile: boolean = window.innerWidth <= 800;
-
-
+  let comp = [MainContainer, MissionContainer, About];
+  //Description
 
   let showModal = false;
   let modalText = "";
@@ -39,52 +38,47 @@
 
     if (accumulatedDeltaY > threshold) {
       // Scrolling down
-      $currentIndex = Math.min($currentIndex + 1, comp.length - 1)
+      $currentIndex = Math.min($currentIndex + 1, comp.length - 1);
       accumulatedDeltaY = 0;
     } else if (accumulatedDeltaY < -threshold) {
       // Scrolling up
-      $currentIndex = Math.max($currentIndex - 1, 0)
+      $currentIndex = Math.max($currentIndex - 1, 0);
       accumulatedDeltaY = 0;
     }
-    $accumulatedDeltaYScroll = (100 / 3.69) * ($currentIndex + accumulatedDeltaY / 3.69);
+    $accumulatedDeltaYScroll =
+      (100 / 3.69) * ($currentIndex + accumulatedDeltaY / 3.69);
   }
 </script>
 
 <main>
-    {#if !mobile}
-      <div id="progress" style="width: {$accumulatedDeltaYScroll}%;"></div>
-      <Header />
-      <div id="scrollHandler" on:wheel={handleScroll}>
-      <Background />
-      <Blob />
-      <Blur />
+  <div id="progress" style="width: {$accumulatedDeltaYScroll}%;"></div>
+  <Header />
+  <div id="scrollHandler" on:wheel={handleScroll}>
+    <Background />
+    <Blob />
+    <Blur />
 
-      <svelte:component
-        this={comp[$currentIndex]}
-        on:displayModal={(e) => {
-          showModal = true;
-          modalText = e.detail.modalText;
-          modalName = e.detail.modalName;
+    <svelte:component
+      this={comp[$currentIndex]}
+      on:displayModal={(e) => {
+        showModal = true;
+        modalText = e.detail.modalText;
+        modalName = e.detail.modalName;
+      }}
+    />
+    {#if showModal}
+      <Modal
+        {modalText}
+        {modalName}
+        on:click={() => {
+          showModal = false;
         }}
       />
-      {#if showModal}
-        <Modal
-          {modalText}
-          {modalName}
-          on:click={() => {
-            showModal = false;
-          }}
-        />
-      {/if}
-    </div>
-
-    {#if $currentIndex == comp.length - 1}
-      <Footer />
     {/if}
-  {:else}
-      <Background />
-      <MainContainer />
+  </div>
 
+  {#if $currentIndex == comp.length - 1}
+    <Footer />
   {/if}
 </main>
 

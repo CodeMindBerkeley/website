@@ -4,6 +4,11 @@
   export let rows = 0;
   export let columns = 0;
 
+  $: console.log(columns, rows);
+  $: () => {
+    console.log(columns, rows);
+  };
+
   //@ts-ignore
   import Fa from "svelte-fa/src/fa.svelte";
   import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
@@ -18,6 +23,7 @@
    * @param {number} columns
    * @param {number} rows
    */
+
   function paginateItems(items, columns, rows) {
     let itemsPerPage = columns * rows;
     let pages = [];
@@ -58,6 +64,7 @@
     paginateItems(members.length, columns, rows),
     members
   );
+
   let currentIndex = 0;
   let movement = [false, false];
 
@@ -108,11 +115,7 @@
   <!-- svelte-ignore a11y-no-static-element-interactions -->
   <div class="nav interactable" on:click={moveRight}>
     {#if movement[1]}
-      <Fa
-        size="3x"
-        class="arrow-icon interactable"
-        icon={faChevronRight}
-      />
+      <Fa size="3x" class="arrow-icon interactable" icon={faChevronRight} />
     {/if}
   </div>
 </div>
